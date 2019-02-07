@@ -1,0 +1,127 @@
+﻿<Window x:Class="Podbeskidzie.Connect"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Podbeskidzie"
+        mc:Ignorable="d" 
+        Height="350" 
+        Width="450" 
+        Loaded="Window_Loaded"
+        ResizeMode="NoResize"
+        KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"  CornerRadius="15" Background="#ff8d3f" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FFF99A58" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#ff8d3f" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Width" Value="235" />
+        </Style>
+        <Style TargetType="Rectangle">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect 
+                        ShadowDepth="3"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.6"
+                        BlurRadius="4">
+                    </DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="MainGrid">
+        <Image Source="Resources/background.jpg" Stretch="UniformToFill" Grid.ColumnSpan="2" Margin="-8 0 -8 -8">
+            <Image.Effect>
+                <BlurEffect Radius="10"/>
+            </Image.Effect>
+        </Image>
+        <Rectangle Fill="Black" Width="450" Opacity="0.2" Height="350" RadiusY="4" RadiusX="4" HorizontalAlignment="Center"/>
+        <Grid Width="224" Height="160">
+            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image Source="Resources/user.png"  Width="20" HorizontalAlignment="Left"  Margin="7,25,0,0" VerticalAlignment="Top"/>
+            <Image Source="Resources/password.png"  Width="18" HorizontalAlignment="Left"  Margin="8,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock 
+                     x:Name="HintLogin"
+                     HorizontalAlignment="Left" 
+                     VerticalAlignment="Top"
+                     Text="login"
+                     Foreground="Gray"
+                     Height="26" 
+                     Width="165"
+                     Padding="1"
+                     Margin="30,22,0,0"
+                     FontSize="18"/>
+            <TextBlock 
+                x:Name="HintHaslo"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center"
+                Text="hasło"
+                Foreground="Gray"
+                Width="165" 
+                Height="26"
+                FontSize="18"
+                Padding="1"
+                Margin="30 0 0 0"/>
+            <TextBox x:Name="tB1"
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Top" 
+                     Height="26" 
+                     Width="165"
+                     Padding="1"
+                     Margin="0 22 0 0"                     
+                     FontSize="18"
+                     BorderThickness="0" 
+                     Background="Transparent"
+                     PreviewMouseDown="tB1_PreviewMouseDown"/>
+            <PasswordBox x:Name="passwordBox" 
+                         HorizontalAlignment="Center" 
+                         VerticalAlignment="Center"
+                         Padding="0"
+                         Width="165" 
+                         Height="26"
+                         FontSize="18"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         PreviewMouseDown="passwordBox_PreviewMouseDown"/>
+            <Button x:Name="btn1"
+                    Style="{DynamicResource RoundedButtonStyle}"
+                    Content="Zaloguj"
+                    Width="224"
+                    Height="32"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,18"                 
+                    Click="btn1_Click">
+                <Button.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="3"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.4"
+                        BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

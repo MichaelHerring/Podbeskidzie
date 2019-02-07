@@ -1,0 +1,355 @@
+﻿<Window x:Class="Podbeskidzie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Podbeskidzie"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="700" 
+        Width="1050"
+        WindowState="Maximized"
+        Loaded="Window_Loaded"
+        MouseDown="Window_MouseDown">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#353c3f" />
+            <Setter Property="Foreground" Value="White" />
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="Foreground" Value="#353c3f"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect 
+                        ShadowDepth="4"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.5"
+                        BlurRadius="4">
+                    </DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Image Source="Resources/background.jpg" Stretch="UniformToFill"  Grid.ColumnSpan="2" Margin="-8 0">
+            <Image.Effect>
+                <BlurEffect Radius="15"/>
+            </Image.Effect>
+        </Image>
+        <!--Menu-->
+        <DockPanel x:Name="Navigation" 
+                   HorizontalAlignment="Stretch"  
+                   Height="30" 
+                   LastChildFill="True" 
+                   VerticalAlignment="Top" 
+                   Background="#353c3f" >
+            <DockPanel.Effect>
+                <DropShadowEffect BlurRadius="6" 
+                                  Direction="270" 
+                                  Opacity="0.6" 
+                                  ShadowDepth="1"/>
+            </DockPanel.Effect>
+            <Button x:Name="btn1"
+                    Content="Dodaj"
+                    Width="100"
+                    Margin="16 0 0 0"
+                    BorderThickness="0"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    MouseEnter="btn1_MouseEnter"
+                    MouseLeave="btn1_MouseLeave"
+                    Click="btn1_Click"/>
+            <Button x:Name="btn2"
+                    Content="Usuń"
+                    Width="100"
+                    Margin="0"
+                    BorderThickness="0"
+                    FontWeight="Bold"
+                    FontSize="14"
+                    MouseEnter="btn2_MouseEnter"
+                    MouseLeave="btn2_MouseLeave"
+                    Click="btn2_Click"
+                     />
+            <Button x:Name="btn3"
+                    Content="Aktualizuj"
+                    Width="100"
+                    Margin="0"
+                    BorderThickness="0"
+                    FontWeight="Bold"
+                    FontSize="14"
+                    MouseEnter="btn3_MouseEnter"
+                    MouseLeave="btn3_MouseLeave"
+                    Click="btn3_Click" />
+            <Button x:Name="btn4"
+                    Content="Wyświetl"
+                    Width="100"
+                    Margin="0"
+                    BorderThickness="0"
+                    FontWeight="Bold"
+                    FontSize="14"
+                    MouseEnter="btn4_MouseEnter"
+                    MouseLeave="btn4_MouseLeave"
+                    Click="btn4_Click" />
+            <Grid Margin="50,0,0,0">
+                <DockPanel x:Name="SearchPanel" LastChildFill="False" HorizontalAlignment="Right" Margin="0 0 40 0">
+                    <Label Content="Tabela:" Foreground="White" Padding="8 6" />
+                    <ComboBox x:Name="ComboBoxTabela" Height="24" Width="100" DropDownClosed="ComboBoxTabela_DropDownClosed">
+                        <ComboBox.Effect>
+                            <DropShadowEffect BlurRadius="4"
+                                              Direction="330"
+                                              Opacity="0.3"/>
+                        </ComboBox.Effect>
+                        <ComboBoxItem>Klient</ComboBoxItem>
+                        <ComboBoxItem>Sprzet</ComboBoxItem>
+                        <ComboBoxItem>Wypozyczenie</ComboBoxItem>
+                        <ComboBoxItem>Rodzaj_Sprzetu</ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Kolumna:" Foreground="White" Padding="8 6"/>
+                    <ComboBox x:Name="ComboBoxKolumna" Height="24" Width="100">
+                        <ComboBox.Effect>
+                            <DropShadowEffect BlurRadius="4"
+                                              Direction="330"
+                                              Opacity="0.3"/>
+                        </ComboBox.Effect>
+                    </ComboBox>
+                    <Label Content="Wartość:" Foreground="White" Padding="8 6"/>
+                    <TextBox x:Name="TextBoxWartosc" Height="24" Width="110" BorderThickness="1 1 0 1" Padding="2" KeyDown="TextBoxWartosc_KeyDown"/>
+                    <Button x:Name="btnWyszukaj" Height="24" Width="24" Background="White" Foreground="Black" BorderThickness="0 1 1 1" BorderBrush="#FFABADB3" Click="btnWyszukaj_Click" >
+                        <Image Source="Resources/search.png" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                    </Button>
+                </DockPanel>
+                <Button x:Name="Hamburger" 
+                        Width="36" 
+                        Height="30"
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Center" 
+                        BorderThickness="0">
+                    <Grid>
+                        <Rectangle Fill="White" 
+                           Width="22"
+                           Height="3" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           RadiusY="1" 
+                           RadiusX="1"/>
+                        <Rectangle Fill="White" 
+                           Width="22"
+                           Height="3" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           RadiusY="1" 
+                           RadiusX="1" Margin="0,-6,0,6"/>
+                        <Rectangle Fill="White" 
+                           Width="22"
+                           Height="3" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           RadiusY="1" 
+                           RadiusX="1" Margin="0,6,0,-6"/>
+                    </Grid>
+                </Button>
+            </Grid>
+        </DockPanel>
+
+        <!--Listy rozwijane-->
+        <StackPanel x:Name="StackPanel1"
+                    Height="124" 
+                    VerticalAlignment="Top" 
+                    Margin="8,26,0,0" 
+                    HorizontalAlignment="Left" 
+                    Width="116"
+                    Visibility="Hidden"
+                    Panel.ZIndex="100" >
+            <Rectangle x:Name="Rectangle1" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
+            <Button x:Name="btnDodaj1" 
+                    Content="Klient" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnDodaj1_Click" />
+            <Button x:Name="btnDodaj2" 
+                    Content="Sprzęt" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnDodaj2_Click"/>
+            <Button x:Name="btnDodaj3" 
+                    Content="Wypożyczenie" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnDodaj3_Click"/>
+            <Button x:Name="btnDodaj4" 
+                    Content="Rodzaj Sprzętu" 
+                    Height="30"
+                    BorderThickness="0"
+                    Click="btnDodaj4_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="StackPanel2"
+                    Height="124" 
+                    VerticalAlignment="Top" 
+                    Margin="108,26,0,0" 
+                    HorizontalAlignment="Left" 
+                    Width="116"
+                    Visibility="Hidden"
+                    Panel.ZIndex="100"
+                    >
+            <Rectangle x:Name="Rectangle2" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
+            <Button x:Name="btnUsun1" 
+                    Content="Klient" 
+                    Height="30"
+                    BorderThickness="0 0 0 1" 
+                    Click="btnUsun1_Click"/>
+            <Button x:Name="btnUsun2" 
+                    Content="Sprzęt" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnUsun2_Click"/>
+            <Button x:Name="btnUsun3" 
+                    Content="Wypożyczenie" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnUsun3_Click"/>
+            <Button x:Name="btnUsun4" 
+                    Content="Rodzaj Sprzętu" 
+                    Height="30"
+                    BorderThickness="0"
+                    Click="btnUsun4_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="StackPanel3"
+                    Height="124" 
+                    VerticalAlignment="Top" 
+                    Margin="208,26,0,0" 
+                    HorizontalAlignment="Left" 
+                    Width="116"
+                    Visibility="Hidden"
+                    Panel.ZIndex="100"
+                    >
+            <Rectangle x:Name="Rectangle3" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
+            <Button x:Name="btnAktualizuj1" 
+                    Content="Klient" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnAktualizuj1_Click"/>
+            <Button x:Name="btnAktualizuj2" 
+                    Content="Sprzęt" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnAktualizuj2_Click"/>
+            <Button x:Name="btnAktualizuj3" 
+                    Content="Wypożyczenie" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnAktualizuj3_Click"/>
+            <Button x:Name="btnAktualizuj4" 
+                    Content="Rodzaj Sprzętu" 
+                    Height="30"
+                    BorderThickness="0"
+                    Click="btnAktualizuj4_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="StackPanel4"
+                    Height="124" 
+                    VerticalAlignment="Top" 
+                    Margin="308,26,0,0" 
+                    HorizontalAlignment="Left" 
+                    Width="116"
+                    Visibility="Hidden"
+                    Panel.ZIndex="100"
+                    >
+            <Rectangle x:Name="Rectangle4" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
+            <Button x:Name="btnWyswietl1" 
+                    Content="Klient" 
+                    Height="30"
+                    BorderThickness="0 0 0 1" 
+                    Click="btnWyswietl1_Click"/>
+            <Button x:Name="btnWyswietl2" 
+                    Content="Sprzęt" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnWyswietl2_Click"/>
+            <Button x:Name="btnWyswietl3" 
+                    Content="Wypożyczenie" 
+                    Height="30"
+                    BorderThickness="0 0 0 1"
+                    Click="btnWyswietl3_Click"/>
+            <Button x:Name="btnWyswietl4" 
+                    Content="Rodzaj Sprzętu" 
+                    Height="30"
+                    BorderThickness="0"
+                    Click="btnWyswietl4_Click"/>
+        </StackPanel>
+
+        <!--Frames, Search Panel, Message panel-->
+        <Grid Margin="0 30 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="525"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="140"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--Frame 1-->
+            <Frame x:Name="Container" 
+                   BorderThickness="0"
+                   Grid.Column="0"
+                   NavigationUIVisibility="Hidden" >
+            </Frame>
+
+            <!--Frame 2-->
+            <Frame x:Name="Container2" 
+                   BorderThickness="0, 0, 0, 0" 
+                   BorderBrush="Black"
+                   Grid.Column="2"
+                   NavigationUIVisibility="Hidden"
+                   Margin="0"/>
+
+            <!--Message panel-->
+            <Label
+                Grid.Row="1"
+                Grid.ColumnSpan="3"
+                Background="#7f807e"
+                BorderThickness="2"
+                BorderBrush="#353c3f"
+                Opacity="0.95">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="8" 
+                                      Direction="90" 
+                                      Opacity="0.6" 
+                                      ShadowDepth="1"/>
+                </Label.Effect>
+            </Label>
+            <Label
+                   Content="Powiadomienia"
+                   Padding="30 2"
+                   FontSize="16"
+                   Background="#353c3f"
+                   Foreground="White"
+                   Grid.Row="1"
+                   Margin="2,2,2,0"
+                   Height="28"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Stretch" 
+                   Grid.ColumnSpan="3"/>
+            <Image x:Name="ImageBulb" Source="Resources/bulb.png" Height="30" Width="30" Margin="2,0,0,110" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="1"/>
+            <Image x:Name="ImageBulbBlack" Source="Resources/bulb-black.png" Height="30" Width="30" Margin="2,0,0,110" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="1"/>
+            <ScrollViewer x:Name="MessageViewer"
+                       Margin="24,30,2,0"
+                       Padding="8 4"
+                       FontSize="14"
+                       FontFamily="Consolas"
+                       Foreground="White"
+                       Grid.Row="1" 
+                       VerticalAlignment="Top" 
+                       Height="108" 
+                       HorizontalAlignment="Stretch"
+                       Grid.ColumnSpan="3"
+                       Background="Transparent" 
+                       Opacity="0.85"/>
+        </Grid>
+    </Grid>
+</Window>
