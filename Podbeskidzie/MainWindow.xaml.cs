@@ -291,5 +291,7 @@ namespace Podbeskidzie
             StackPanel3.Visibility = Visibility.Hidden;
             StackPanel4.Visibility = Visibility.Hidden;
         }
+
+     
     }
 }

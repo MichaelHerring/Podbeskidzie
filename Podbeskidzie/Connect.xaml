@@ -50,17 +50,21 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="MainGrid">
-        <Image Source="Resources/background.jpg" Stretch="UniformToFill" Grid.ColumnSpan="2" Margin="-8 0 -8 -8">
-            <Image.Effect>
+        <Image Source="Resources/back3.png" Stretch="UniformToFill" Margin="-66,0,0.2,-8.2">
+            <!--<Image.Effect>
                 <BlurEffect Radius="10"/>
-            </Image.Effect>
+            </Image.Effect>-->
         </Image>
-        <Rectangle Fill="Black" Width="450" Opacity="0.2" Height="350" RadiusY="4" RadiusX="4" HorizontalAlignment="Center"/>
-        <Grid Width="224" Height="160">
-            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
-            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Rectangle Fill="Black" Width="446" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="-3,0,0.2,-29.2"/>
+        <Grid Margin="115,136,106.2,19.8" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="71*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,20,1,0" Grid.ColumnSpan="2"/>
+            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="1,66"/>
             <Image Source="Resources/user.png"  Width="20" HorizontalAlignment="Left"  Margin="7,25,0,0" VerticalAlignment="Top"/>
-            <Image Source="Resources/password.png"  Width="18" HorizontalAlignment="Left"  Margin="8,0,0,0" VerticalAlignment="Center"/>
+            <Image Source="Resources/password.png"  Width="18" HorizontalAlignment="Left"  Margin="8,72,0,72" VerticalAlignment="Center"/>
             <TextBlock 
                      x:Name="HintLogin"
                      HorizontalAlignment="Left" 
@@ -82,14 +86,14 @@
                 Height="26"
                 FontSize="18"
                 Padding="1"
-                Margin="30 0 0 0"/>
+                Margin="30,68,0,68"/>
             <TextBox x:Name="tB1"
                      HorizontalAlignment="Center" 
                      VerticalAlignment="Top" 
                      Height="26" 
                      Width="165"
                      Padding="1"
-                     Margin="0 22 0 0"                     
+                     Margin="29,22,18.629,0"                     
                      FontSize="18"
                      BorderThickness="0" 
                      Background="Transparent"
@@ -103,7 +107,7 @@
                          FontSize="18"
                          BorderThickness="0"
                          Background="Transparent"
-                         PreviewMouseDown="passwordBox_PreviewMouseDown"/>
+                         PreviewMouseDown="passwordBox_PreviewMouseDown" Margin="29,68,18.629,68"/>
             <Button x:Name="btn1"
                     Style="{DynamicResource RoundedButtonStyle}"
                     Content="Zaloguj"
@@ -111,8 +115,8 @@
                     Height="32"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
-                    Margin="0,0,0,18"                 
-                    Click="btn1_Click">
+                    Margin="-1,0,-1,18"                 
+                    Click="btn1_Click" Grid.ColumnSpan="2">
                 <Button.Effect>
                     <DropShadowEffect
                         ShadowDepth="3"

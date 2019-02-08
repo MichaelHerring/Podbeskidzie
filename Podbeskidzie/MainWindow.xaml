@@ -37,15 +37,15 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Image Source="Resources/background.jpg" Stretch="UniformToFill"  Grid.ColumnSpan="2" Margin="-8 0">
+        <Image Source="Resources/2.jpeg" Stretch="UniformToFill"  Grid.ColumnSpan="2" Margin="-8 0">
             <Image.Effect>
-                <BlurEffect Radius="15"/>
+                <BlurEffect Radius="1"/>
             </Image.Effect>
         </Image>
         <!--Menu-->
         <DockPanel x:Name="Navigation" 
                    HorizontalAlignment="Stretch"  
-                   Height="30" 
+                   Height="45" 
                    LastChildFill="True" 
                    VerticalAlignment="Top" 
                    Background="#353c3f" >
@@ -57,8 +57,8 @@
             </DockPanel.Effect>
             <Button x:Name="btn1"
                     Content="Dodaj"
-                    Width="100"
-                    Margin="16 0 0 0"
+                    Width="120"
+                    Margin="0 0 0 0"
                     BorderThickness="0"
                     FontSize="14"
                     FontWeight="Bold"
@@ -67,7 +67,7 @@
                     Click="btn1_Click"/>
             <Button x:Name="btn2"
                     Content="Usuń"
-                    Width="100"
+                    Width="120"
                     Margin="0"
                     BorderThickness="0"
                     FontWeight="Bold"
@@ -78,7 +78,7 @@
                      />
             <Button x:Name="btn3"
                     Content="Aktualizuj"
-                    Width="100"
+                    Width="120"
                     Margin="0"
                     BorderThickness="0"
                     FontWeight="Bold"
@@ -88,7 +88,7 @@
                     Click="btn3_Click" />
             <Button x:Name="btn4"
                     Content="Wyświetl"
-                    Width="100"
+                    Width="120"
                     Margin="0"
                     BorderThickness="0"
                     FontWeight="Bold"
@@ -98,7 +98,7 @@
                     Click="btn4_Click" />
             <Grid Margin="50,0,0,0">
                 <DockPanel x:Name="SearchPanel" LastChildFill="False" HorizontalAlignment="Right" Margin="0 0 40 0">
-                    <Label Content="Tabela:" Foreground="White" Padding="8 6" />
+                    <Label Content="Tabela:" Foreground="White" Padding="8 6" Margin="0,10,0,-0.2" Width="55" />
                     <ComboBox x:Name="ComboBoxTabela" Height="24" Width="100" DropDownClosed="ComboBoxTabela_DropDownClosed">
                         <ComboBox.Effect>
                             <DropShadowEffect BlurRadius="4"
@@ -110,7 +110,7 @@
                         <ComboBoxItem>Wypozyczenie</ComboBoxItem>
                         <ComboBoxItem>Rodzaj_Sprzetu</ComboBoxItem>
                     </ComboBox>
-                    <Label Content="Kolumna:" Foreground="White" Padding="8 6"/>
+                    <Label Content="Kolumna:" Foreground="White" Padding="8 6" Margin="0,10,0,-0.2"/>
                     <ComboBox x:Name="ComboBoxKolumna" Height="24" Width="100">
                         <ComboBox.Effect>
                             <DropShadowEffect BlurRadius="4"
@@ -118,7 +118,7 @@
                                               Opacity="0.3"/>
                         </ComboBox.Effect>
                     </ComboBox>
-                    <Label Content="Wartość:" Foreground="White" Padding="8 6"/>
+                    <Label Content="Wartość:" Foreground="White" Padding="8 6" Margin="0,10,0,-0.2" Width="61"/>
                     <TextBox x:Name="TextBoxWartosc" Height="24" Width="110" BorderThickness="1 1 0 1" Padding="2" KeyDown="TextBoxWartosc_KeyDown"/>
                     <Button x:Name="btnWyszukaj" Height="24" Width="24" Background="White" Foreground="Black" BorderThickness="0 1 1 1" BorderBrush="#FFABADB3" Click="btnWyszukaj_Click" >
                         <Image Source="Resources/search.png" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
@@ -161,9 +161,9 @@
         <StackPanel x:Name="StackPanel1"
                     Height="124" 
                     VerticalAlignment="Top" 
-                    Margin="8,26,0,0" 
+                    Margin="0,35,0,0" 
                     HorizontalAlignment="Left" 
-                    Width="116"
+                    Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100" >
             <Rectangle x:Name="Rectangle1" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
@@ -191,9 +191,9 @@
         <StackPanel x:Name="StackPanel2"
                     Height="124" 
                     VerticalAlignment="Top" 
-                    Margin="108,26,0,0" 
+                    Margin="120,35,0,0" 
                     HorizontalAlignment="Left" 
-                    Width="116"
+                    Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
@@ -222,9 +222,9 @@
         <StackPanel x:Name="StackPanel3"
                     Height="124" 
                     VerticalAlignment="Top" 
-                    Margin="208,26,0,0" 
+                    Margin="240,35,0,0" 
                     HorizontalAlignment="Left" 
-                    Width="116"
+                    Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
@@ -253,9 +253,9 @@
         <StackPanel x:Name="StackPanel4"
                     Height="124" 
                     VerticalAlignment="Top" 
-                    Margin="308,26,0,0" 
+                    Margin="360,35,0,0" 
                     HorizontalAlignment="Left" 
-                    Width="116"
+                    Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
@@ -297,7 +297,7 @@
             <Frame x:Name="Container" 
                    BorderThickness="0"
                    Grid.Column="0"
-                   NavigationUIVisibility="Hidden" >
+                   NavigationUIVisibility="Hidden"  >
             </Frame>
 
             <!--Frame 2-->
