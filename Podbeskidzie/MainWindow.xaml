@@ -13,12 +13,12 @@
         MouseDown="Window_MouseDown">
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#353c3f" />
+            <Setter Property="Background" Value="#0f1f38" />
             <Setter Property="Foreground" Value="White" />
             <Style.Triggers>
                 <Trigger Property="Button.IsMouseOver" Value="True">
                     <Setter Property="FontWeight" Value="Bold" />
-                    <Setter Property="Foreground" Value="#353c3f"/>
+                    <Setter Property="Foreground" Value="#f55449"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -48,7 +48,7 @@
                    Height="45" 
                    LastChildFill="True" 
                    VerticalAlignment="Top" 
-                   Background="#353c3f" >
+                   Background="#0f1f38" >
             <DockPanel.Effect>
                 <DropShadowEffect BlurRadius="6" 
                                   Direction="270" 
@@ -96,8 +96,8 @@
                     MouseEnter="btn4_MouseEnter"
                     MouseLeave="btn4_MouseLeave"
                     Click="btn4_Click" />
-            <Grid Margin="50,0,0,0">
-                <DockPanel x:Name="SearchPanel" LastChildFill="False" HorizontalAlignment="Right" Margin="0 0 40 0">
+            <Grid Margin="0">
+                <DockPanel x:Name="SearchPanel" LastChildFill="False" HorizontalAlignment="Right" Margin="0 0 8 0">
                     <Label Content="Tabela:" Foreground="White" Padding="8 6" Margin="0,10,0,-0.2" Width="55" />
                     <ComboBox x:Name="ComboBoxTabela" Height="24" Width="100" DropDownClosed="ComboBoxTabela_DropDownClosed">
                         <ComboBox.Effect>
@@ -124,7 +124,7 @@
                         <Image Source="Resources/search.png" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                     </Button>
                 </DockPanel>
-                <Button x:Name="Hamburger" 
+                <!--Button x:Name="Hamburger" 
                         Width="36" 
                         Height="30"
                         HorizontalAlignment="Right" 
@@ -153,7 +153,7 @@
                            RadiusY="1" 
                            RadiusX="1" Margin="0,6,0,-6"/>
                     </Grid>
-                </Button>
+                </-->
             </Grid>
         </DockPanel>
 
@@ -161,12 +161,12 @@
         <StackPanel x:Name="StackPanel1"
                     Height="124" 
                     VerticalAlignment="Top" 
-                    Margin="0,35,0,0" 
+                    Margin="0,41,0,0" 
                     HorizontalAlignment="Left" 
                     Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100" >
-            <Rectangle x:Name="Rectangle1" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
+            <Rectangle x:Name="Rectangle1" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnDodaj1" 
                     Content="Klient" 
                     Height="30"
@@ -191,13 +191,13 @@
         <StackPanel x:Name="StackPanel2"
                     Height="124" 
                     VerticalAlignment="Top" 
-                    Margin="120,35,0,0" 
+                    Margin="120,41,0,0" 
                     HorizontalAlignment="Left" 
                     Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
-            <Rectangle x:Name="Rectangle2" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
+            <Rectangle x:Name="Rectangle2" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnUsun1" 
                     Content="Klient" 
                     Height="30"
@@ -222,13 +222,13 @@
         <StackPanel x:Name="StackPanel3"
                     Height="124" 
                     VerticalAlignment="Top" 
-                    Margin="240,35,0,0" 
+                    Margin="240,41,0,0" 
                     HorizontalAlignment="Left" 
                     Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
-            <Rectangle x:Name="Rectangle3" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
+            <Rectangle x:Name="Rectangle3" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnAktualizuj1" 
                     Content="Klient" 
                     Height="30"
@@ -253,13 +253,13 @@
         <StackPanel x:Name="StackPanel4"
                     Height="124" 
                     VerticalAlignment="Top" 
-                    Margin="360,35,0,0" 
+                    Margin="360,41,0,0" 
                     HorizontalAlignment="Left" 
                     Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
-            <Rectangle x:Name="Rectangle4" Height="4" Fill="#ff8d3f" Width="104" RadiusY="2" RadiusX="2"/>
+            <Rectangle x:Name="Rectangle4" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnWyswietl1" 
                     Content="Klient" 
                     Height="30"
@@ -283,7 +283,7 @@
         </StackPanel>
 
         <!--Frames, Search Panel, Message panel-->
-        <Grid Margin="0 30 0 0">
+        <Grid Margin="0 45 0 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="525"/>
                 <ColumnDefinition/>
@@ -312,7 +312,7 @@
             <Label
                 Grid.Row="1"
                 Grid.ColumnSpan="3"
-                Background="#7f807e"
+                Background="#f4f4ef"
                 BorderThickness="2"
                 BorderBrush="#353c3f"
                 Opacity="0.95">
@@ -327,7 +327,7 @@
                    Content="Powiadomienia"
                    Padding="30 2"
                    FontSize="16"
-                   Background="#353c3f"
+                   Background="#0f1f38"
                    Foreground="White"
                    Grid.Row="1"
                    Margin="2,2,2,0"
