@@ -299,5 +299,10 @@ namespace Podbeskidzie
         {
             Close();
         }
+
+        private void MiniBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

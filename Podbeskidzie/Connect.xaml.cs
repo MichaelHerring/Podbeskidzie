@@ -119,5 +119,16 @@ namespace Podbeskidzie
         {
             Close();
         }
+
+        private void Maxibutton_Click(object sender, RoutedEventArgs e)
+        {
+            //this.WindowState = WindowState.Maximized;
+            
+        }
+
+        private void MiniBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

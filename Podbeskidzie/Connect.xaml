@@ -141,12 +141,12 @@
                     <Image Source="Resources/close.png" Height="17" Width="17"></Image>
                 </StackPanel>
             </Button>
-            <Button Background="Black" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20">
+            <Button Name="MiniBtn" Click="MiniBtn_Click" Background="Black" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20">
                 <StackPanel>
                     <Image Source="Resources/minimize.png" Height="17" Width="17"></Image>
                 </StackPanel>
             </Button>
-            <Button Background="Black" DockPanel.Dock="Right" Width="20">
+            <Button Name="Maxibutton" Click="Maxibutton_Click" Background="Black" DockPanel.Dock="Right" Width="20">
                 <StackPanel>
                     <Image Source="Resources/12.png"/>
                 </StackPanel>
