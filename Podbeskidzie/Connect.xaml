@@ -9,6 +9,7 @@
         Width="450" 
         Loaded="Window_Loaded"
         ResizeMode="NoResize"
+        WindowStyle="None"
         KeyDown="Window_KeyDown">
 
     <Window.Resources>
@@ -50,17 +51,26 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="MainGrid">
-        <Image Source="Resources/back3.png" Stretch="UniformToFill" Margin="-66,0,0.2,-8.2">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="349*"/>
+        </Grid.RowDefinitions>
+        <Image Source="Resources/back3.png" Stretch="UniformToFill" Margin="-95,0,-0.4,-8.6" Grid.RowSpan="2">
             <!--<Image.Effect>
                 <BlurEffect Radius="10"/>
             </Image.Effect>-->
         </Image>
-        <Rectangle Fill="Black" Width="446" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="-3,0,0.2,-29.2"/>
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 120 0 0" >
-            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,20,1,0" Grid.ColumnSpan="2"/>
-            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="1,66"/>
+        <DockPanel></DockPanel>
+        <Rectangle Fill="Black" Width="450" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="0,0.2,-0.4,-29.6" Grid.Row="1"/>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="132,154.2,113.6,0" Grid.Row="1" Height="156" Width="204" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,20,1.4,0" Grid.ColumnSpan="2"/>
+            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="1,66,1.4,65.6"/>
             <Image Source="Resources/user.png"  Width="20" HorizontalAlignment="Left"  Margin="7,25,0,0" VerticalAlignment="Top"/>
-            <Image Source="Resources/password.png"  Width="18" HorizontalAlignment="Left"  Margin="8,72,0,72" VerticalAlignment="Center"/>
+            <Image Source="Resources/password.png"  Width="18" HorizontalAlignment="Left"  Margin="8,72,0,71.6" VerticalAlignment="Center"/>
             <TextBlock 
                      x:Name="HintLogin"
                      HorizontalAlignment="Left" 
@@ -82,14 +92,14 @@
                 Height="26"
                 FontSize="18"
                 Padding="1"
-                Margin="30,0,0,0"/>
+                Margin="30,68,0,67.6"/>
             <TextBox x:Name="tB1"
                      HorizontalAlignment="Center" 
                      VerticalAlignment="Top" 
                      Height="26" 
                      Width="165"
                      Padding="1"
-                     Margin="0,22,0,0"                     
+                     Margin="29,22,26.2,0"                     
                      FontSize="18"
                      BorderThickness="0" 
                      Background="Transparent"
@@ -103,7 +113,7 @@
                          FontSize="18"
                          BorderThickness="0"
                          Background="Transparent"
-                         PreviewMouseDown="passwordBox_PreviewMouseDown"/>
+                         PreviewMouseDown="passwordBox_PreviewMouseDown" Margin="29,68,26.2,67.6"/>
             <Button x:Name="btn1"
                     Style="{DynamicResource RoundedButtonStyle}"
                     Content="Zaloguj"
@@ -111,8 +121,8 @@
                     Height="32"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
-                    Margin="-1,0,-1,18"                 
-                    Click="btn1_Click">
+                    Margin="-1,0,-0.6,17.6"                 
+                    Click="btn1_Click" Grid.ColumnSpan="2">
                 <Button.Effect>
                     <DropShadowEffect
                         ShadowDepth="3"
@@ -122,6 +132,25 @@
                         BlurRadius="4"/>
                 </Button.Effect>
             </Button>
+
+
         </Grid>
+        <DockPanel Grid.ColumnSpan="1" Background="Black" Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,-0.4,0" Grid.RowSpan="2">
+            <Button Background="Black" DockPanel.Dock="Right" Width="20">
+                <StackPanel>
+                    <Image Source="Resources/close.png" Height="17" Width="17"></Image>
+                </StackPanel>
+            </Button>
+            <Button Background="Black" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20">
+                <StackPanel>
+                    <Image Source="Resources/minimize.png" Height="17" Width="17"></Image>
+                </StackPanel>
+            </Button>
+            <Button Background="Black" DockPanel.Dock="Right" Width="20">
+                <StackPanel>
+                    <Image Source="Resources/12.png"/>
+                </StackPanel>
+            </Button>
+        </DockPanel>
     </Grid>
 </Window>
