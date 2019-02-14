@@ -51,27 +51,17 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="MainGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="349*"/>
-        </Grid.RowDefinitions>
-        <MediaElement Source="Resources/podbeskidzie.mp4" Stretch="UniformToFill" Margin="-95,0,-0.4,-8.6" Grid.RowSpan="2">
+        <MediaElement Source="Resources/podbeskidzie.mp4" Stretch="UniformToFill" Margin="-95,0,-0.4,-8.6">
             <!--<Image.Effect>
                 <BlurEffect Radius="10"/>
             </Image.Effect>-->
         </MediaElement>
-        <DockPanel></DockPanel>
-        
         <Rectangle Fill="Black" Width="450" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="-10,-20,9.6,-8.6" Grid.RowSpan="2"/>
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="132,154.2,113.6,0" Grid.Row="1" Height="156" Width="204" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="110*"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,20,1.4,0" Grid.ColumnSpan="2"/>
-            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="1,66,1.4,65.6"/>
+        <Grid Width="224" Height="160" VerticalAlignment="Top" Margin="0 140 0 0">
+            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+            <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Image Source="Resources/user.png"  Width="20" HorizontalAlignment="Left"  Margin="7,25,0,0" VerticalAlignment="Top"/>
-            <Image Source="Resources/password.png"  Width="18" HorizontalAlignment="Left"  Margin="8,72,0,71.6" VerticalAlignment="Center"/>
+            <Image Source="Resources/password.png"  Width="18" HorizontalAlignment="Left"  Margin="8,0,0,0" VerticalAlignment="Center"/>
             <TextBlock 
                      x:Name="HintLogin"
                      HorizontalAlignment="Left" 
@@ -93,14 +83,14 @@
                 Height="26"
                 FontSize="18"
                 Padding="1"
-                Margin="30,68,0,67.6"/>
+                Margin="30 0 0 0"/>
             <TextBox x:Name="tB1"
                      HorizontalAlignment="Center" 
                      VerticalAlignment="Top" 
                      Height="26" 
                      Width="165"
                      Padding="1"
-                     Margin="29,22,26.2,0"                     
+                     Margin="0 22 0 0"                     
                      FontSize="18"
                      BorderThickness="0" 
                      Background="Transparent"
@@ -114,7 +104,7 @@
                          FontSize="18"
                          BorderThickness="0"
                          Background="Transparent"
-                         PreviewMouseDown="passwordBox_PreviewMouseDown" Margin="29,68,26.2,67.6"/>
+                         PreviewMouseDown="passwordBox_PreviewMouseDown"/>
             <Button x:Name="btn1"
                     Style="{DynamicResource RoundedButtonStyle}"
                     Content="Zaloguj"
@@ -122,8 +112,8 @@
                     Height="32"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
-                    Margin="-1,0,-0.6,17.6"                 
-                    Click="btn1_Click" Grid.ColumnSpan="2">
+                    Margin="0,0,0,18"                 
+                    Click="btn1_Click">
                 <Button.Effect>
                     <DropShadowEffect
                         ShadowDepth="3"
@@ -133,26 +123,25 @@
                         BlurRadius="4"/>
                 </Button.Effect>
             </Button>
-
-
         </Grid>
-        <DockPanel Grid.ColumnSpan="1" Background="Black" Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,-0.4,0" Grid.RowSpan="2">
-            <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Black" DockPanel.Dock="Right" Width="20">
+        
+        <DockPanel Grid.ColumnSpan="1" Background="Transparent" Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,-0.4,0" Grid.RowSpan="2">
+            <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Transparent" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
                     <Image Source="Resources/close.png" Height="17" Width="17"></Image>
                 </StackPanel>
             </Button>
-            <Button Name="MiniBtn" Click="MiniBtn_Click" Background="Black" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20">
+            <Button Name="MiniBtn" Click="MiniBtn_Click" Background="Transparent" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
                     <Image Source="Resources/minimize.png" Height="17" Width="17"></Image>
                 </StackPanel>
             </Button>
-            <Button Name="Maxibutton" Click="Maxibutton_Click" Background="Black" DockPanel.Dock="Right" Width="20">
+            <Button Name="Maxibutton" Click="Maxibutton_Click" Background="Transparent" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
                     <Image Source="Resources/12.png"/>
                 </StackPanel>
             </Button>
         </DockPanel>
-        <Image Source="Resources/Podbeskidzie.png" HorizontalAlignment="Left" Height="100" Margin="184,54.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <Image Source="Resources/Podbeskidzie.png" HorizontalAlignment="Center" Height="100" Margin="0,54,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

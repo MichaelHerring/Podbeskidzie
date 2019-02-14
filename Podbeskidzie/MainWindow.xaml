@@ -348,7 +348,7 @@
                        Padding="8 4"
                        FontSize="14"
                        FontFamily="Consolas"
-                       Foreground="White"
+                       Foreground="Black"
                        Grid.Row="1" 
                        VerticalAlignment="Top" 
                        Height="108" 
@@ -359,17 +359,17 @@
         </Grid>
         <DockPanel Background="Black" Grid.ColumnSpan="2"  Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,0.2,0">
 
-            <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Black" DockPanel.Dock="Right" Width="20">
+            <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Black" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
                     <Image Source="Resources/close.png" Height="17" Width="17"></Image>
                 </StackPanel>
             </Button>
-            <Button Name="MiniBtn" Click="MiniBtn_Click" Background="Black" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20">
+            <Button Name="MiniBtn" Click="MiniBtn_Click" Background="Black" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
                     <Image Source="Resources/minimize.png" Height="17" Width="17"></Image>
                 </StackPanel>
             </Button>
-            <Button Background="Black" DockPanel.Dock="Right" Width="20">
+            <Button Background="Black" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
                     <Image Source="Resources/12.png"/>
                 </StackPanel>

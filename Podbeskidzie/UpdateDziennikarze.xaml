@@ -203,8 +203,8 @@
             </Button.Effect>
             <Button.ToolTip>
                 <StackPanel>
-                    <TextBlock FontWeight="Bold" Text="Naciśnij przycisk aby usunąć rekord" Foreground="Black"/>
-                    <TextBlock Text="Usunięcie danej z bazy" Foreground="Black"/>
+                    <TextBlock FontWeight="Bold" Text="Naciśnij przycisk aby zaktualizować rekord" Foreground="Black"/>
+                    <TextBlock Text="Aktualizacja danych w bazie" Foreground="Black"/>
                 </StackPanel>
             </Button.ToolTip>
         </Button>
