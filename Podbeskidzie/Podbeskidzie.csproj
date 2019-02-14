@@ -189,7 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\podbeskidzie.mp4">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
