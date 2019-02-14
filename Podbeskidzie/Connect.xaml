@@ -117,7 +117,7 @@
             <Button x:Name="btn1"
                     Style="{DynamicResource RoundedButtonStyle}"
                     Content="Zaloguj"
-                    Width="224"
+                    Width="225"
                     Height="32"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
