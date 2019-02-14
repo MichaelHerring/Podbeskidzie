@@ -61,6 +61,7 @@
             </Image.Effect>-->
         </MediaElement>
         <DockPanel></DockPanel>
+        
         <Rectangle Fill="Black" Width="450" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="-10,-20,9.6,-8.6" Grid.RowSpan="2"/>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="132,154.2,113.6,0" Grid.Row="1" Height="156" Width="204" >
             <Grid.ColumnDefinitions>
@@ -152,5 +153,6 @@
                 </StackPanel>
             </Button>
         </DockPanel>
+        <Image Source="Resources/Podbeskidzie.png" HorizontalAlignment="Left" Height="100" Margin="184,54.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
