@@ -295,6 +295,9 @@ namespace Podbeskidzie
             StackPanel4.Visibility = Visibility.Hidden;
         }
 
-     
+        private void ZamknijButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

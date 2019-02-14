@@ -114,5 +114,10 @@ namespace Podbeskidzie
                 passwordBox.Background = Brushes.White;
             }
         }
+
+        private void ZamknijButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
