@@ -58,14 +58,23 @@
     <Compile Include="Connect.xaml.cs">
       <DependentUpon>Connect.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteDziennikarze.xaml.cs">
+      <DependentUpon>DeleteDziennikarze.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DeleteKlient.xaml.cs">
       <DependentUpon>DeleteKlient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InsertDziennikarze.xaml.cs">
+      <DependentUpon>InsertDziennikarze.xaml</DependentUpon>
     </Compile>
     <Compile Include="InsertKlient.xaml.cs">
       <DependentUpon>InsertKlient.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShowTable.xaml.cs">
       <DependentUpon>ShowTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDziennikarze.xaml.cs">
+      <DependentUpon>UpdateDziennikarze.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdateKlient.xaml.cs">
       <DependentUpon>UpdateKlient.xaml</DependentUpon>
@@ -77,9 +86,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="DeleteDziennikarze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DeleteKlient.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InsertDziennikarze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InsertKlient.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +117,10 @@
     <Page Include="ShowTable.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UpdateDziennikarze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpdateKlient.xaml">
       <Generator>MSBuild:Compile</Generator>

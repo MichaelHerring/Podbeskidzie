@@ -187,7 +187,8 @@ namespace Podbeskidzie
         //Lista rozwijana dodawanie
         private void btnDodaj1_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new InsertDziennikarze();
+            StackPanel1.Visibility = Visibility.Hidden;
         }
 
         private void btnDodaj2_Click(object sender, RoutedEventArgs e)
@@ -208,7 +209,8 @@ namespace Podbeskidzie
         //Lista rozwijana Usuwanie
         private void btnUsun1_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new DeleteDziennikarze();
+            StackPanel2.Visibility = Visibility.Hidden;
         }
 
         private void btnUsun2_Click(object sender, RoutedEventArgs e)
@@ -229,7 +231,8 @@ namespace Podbeskidzie
         //Lista rozwijana Aktualizacja
         private void btnAktualizuj1_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new UpdateDziennikarze();
+            StackPanel3.Visibility = Visibility.Hidden;
         }
 
         private void btnAktualizuj2_Click(object sender, RoutedEventArgs e)

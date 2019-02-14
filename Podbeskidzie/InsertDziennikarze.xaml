@@ -1,0 +1,188 @@
+﻿<Page x:Class="Podbeskidzie.InsertDziennikarze"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Podbeskidzie"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="525"
+      Background="Transparent"
+      Title="InsertDziennikarze">
+    <Page.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"  CornerRadius="15" Background="#f55449" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#f66055" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#f66055" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Width" Value="235" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="2" Opacity="0.6" ShadowDepth="2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Rectangle">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect 
+                        ShadowDepth="3"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.2"
+                        BlurRadius="4">
+                    </DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Width="475" 
+        Height="350"
+        Margin="0 26 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" 
+               Grid.Row="0"
+               FontSize="18"
+               Content="ID Dziennikarza" />
+        <Label Grid.Column="0" 
+               Grid.Row="1"
+               FontSize="18"
+               Content="Imię" />
+        <Label Grid.Column="0" 
+               Grid.Row="2"
+               FontSize="18"
+               Content="Nazwisko" />
+        <Label Grid.Column="0" 
+               Grid.Row="3"
+               FontSize="18"
+               Content="Redakcja" />
+        <Label Grid.Column="0" 
+               Grid.Row="4"
+               FontSize="18"
+               Content="Typ"/>
+        <Label Grid.Column="0" 
+               Grid.Row="5"
+               FontSize="18"
+               Content="Telefon" />
+        <Label Grid.Column="0" 
+               Grid.Row="6"
+               FontSize="18"
+               Content="Email" />
+        <Rectangle Fill="White" Grid.Column="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="3" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="4" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="5" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="6" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <TextBox x:Name="tB0"
+                 Grid.Column="1"
+                 Grid.Row="0"
+                 FontSize="18"
+                 IsEnabled="False"
+                 Text="automatycznie"
+                 Margin="16 5 16 5"
+                 Padding="2"
+                 />
+        <TextBox x:Name="tB1" 
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 FontSize="18"
+                 Margin="16 5 16 5" 
+                 Padding="2"/>
+        <TextBox x:Name="tB2" 
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 FontSize="18"
+                 Margin="16 5 16 5"
+                 Padding="2"/>
+        <TextBox x:Name="tB3" 
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 FontSize="18"
+                 BorderThickness="0"
+                 BorderBrush="#FFF0F0F0"
+                 Margin="16 5 16 5" 
+                 Padding="2"/>
+        <TextBox x:Name="tB4" 
+                 Grid.Column="1"
+                 Grid.Row="4"
+                 FontSize="18"
+                 Margin="16 5 16 5"
+                 Padding="2"/>
+        <TextBox x:Name="tB5" 
+                 Grid.Column="1"
+                 Grid.Row="5"
+                 FontSize="18"
+                 Margin="16 5 16 5"
+                 Padding="2"/>
+        <TextBox x:Name="tB6"
+                 Grid.Column="1"
+                 Grid.Row="6"
+                 FontSize="18"
+                 Margin="16 5 16 5"
+                 Padding="2"/>
+        <Button x:Name="btn1"
+                Style="{DynamicResource RoundedButtonStyle}"
+                Content="Dodaj" 
+                Grid.Row="7" 
+                Grid.Column="1" 
+                HorizontalAlignment="Center"
+                Margin="0 4 0 0"
+                Click="btn1_Click">
+            <Button.Effect>
+                <DropShadowEffect
+                     ShadowDepth="4"
+                     Direction="330"
+                     Color="Black"
+                     Opacity="0.2"
+                     BlurRadius="4"/>
+            </Button.Effect>
+            <Button.ToolTip>
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" Text="Naciśnij przycisk aby dodać rekord" Foreground="Black"/>
+                    <TextBlock Text="Dodanie danych do bazy" Foreground="Black"/>
+                </StackPanel>
+            </Button.ToolTip>
+        </Button>
+    </Grid>
+</Page>

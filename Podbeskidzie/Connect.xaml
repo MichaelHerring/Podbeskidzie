@@ -16,15 +16,15 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="border"  CornerRadius="15" Background="#ff8d3f" BorderThickness="1" Padding="2">
+                        <Border x:Name="border"  CornerRadius="15" Background="#f55449" BorderThickness="1" Padding="2">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#FFF99A58" />
+                                <Setter Property="Background" TargetName="border" Value="#f66055" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#ff8d3f" />
+                                <Setter Property="Background" TargetName="border" Value="#f66055" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -56,11 +56,7 @@
             </Image.Effect>-->
         </Image>
         <Rectangle Fill="Black" Width="446" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="-3,0,0.2,-29.2"/>
-        <Grid Margin="115,136,106.2,19.8" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="71*"/>
-                <ColumnDefinition Width="3*"/>
-            </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 120 0 0" >
             <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="1,20,1,0" Grid.ColumnSpan="2"/>
             <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="1,66"/>
             <Image Source="Resources/user.png"  Width="20" HorizontalAlignment="Left"  Margin="7,25,0,0" VerticalAlignment="Top"/>
@@ -86,14 +82,14 @@
                 Height="26"
                 FontSize="18"
                 Padding="1"
-                Margin="30,68,0,68"/>
+                Margin="30,0,0,0"/>
             <TextBox x:Name="tB1"
                      HorizontalAlignment="Center" 
                      VerticalAlignment="Top" 
                      Height="26" 
                      Width="165"
                      Padding="1"
-                     Margin="29,22,18.629,0"                     
+                     Margin="0,22,0,0"                     
                      FontSize="18"
                      BorderThickness="0" 
                      Background="Transparent"
@@ -107,7 +103,7 @@
                          FontSize="18"
                          BorderThickness="0"
                          Background="Transparent"
-                         PreviewMouseDown="passwordBox_PreviewMouseDown" Margin="29,68,18.629,68"/>
+                         PreviewMouseDown="passwordBox_PreviewMouseDown"/>
             <Button x:Name="btn1"
                     Style="{DynamicResource RoundedButtonStyle}"
                     Content="Zaloguj"
@@ -116,7 +112,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Margin="-1,0,-1,18"                 
-                    Click="btn1_Click" Grid.ColumnSpan="2">
+                    Click="btn1_Click">
                 <Button.Effect>
                     <DropShadowEffect
                         ShadowDepth="3"

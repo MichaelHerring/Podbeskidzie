@@ -18,7 +18,7 @@
             <Style.Triggers>
                 <Trigger Property="Button.IsMouseOver" Value="True">
                     <Setter Property="FontWeight" Value="Bold" />
-                    <Setter Property="Foreground" Value="#f55449"/>
+                    <Setter Property="Foreground" Value="#000"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -168,22 +168,22 @@
                     Panel.ZIndex="100" >
             <Rectangle x:Name="Rectangle1" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnDodaj1" 
-                    Content="Klient" 
+                    Content="Dziennikarze" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnDodaj1_Click" />
             <Button x:Name="btnDodaj2" 
-                    Content="Sprzęt" 
+                    Content="Redakcje" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnDodaj2_Click"/>
             <Button x:Name="btnDodaj3" 
-                    Content="Wypożyczenie" 
+                    Content="Wolontariusze" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnDodaj3_Click"/>
             <Button x:Name="btnDodaj4" 
-                    Content="Rodzaj Sprzętu" 
+                    Content="Pracownicy" 
                     Height="30"
                     BorderThickness="0"
                     Click="btnDodaj4_Click"/>
@@ -199,22 +199,22 @@
                     >
             <Rectangle x:Name="Rectangle2" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnUsun1" 
-                    Content="Klient" 
+                    Content="Dziennikarze" 
                     Height="30"
                     BorderThickness="0 0 0 1" 
                     Click="btnUsun1_Click"/>
             <Button x:Name="btnUsun2" 
-                    Content="Sprzęt" 
+                    Content="Redakcje" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnUsun2_Click"/>
             <Button x:Name="btnUsun3" 
-                    Content="Wypożyczenie" 
+                    Content="Wolontariusze" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnUsun3_Click"/>
             <Button x:Name="btnUsun4" 
-                    Content="Rodzaj Sprzętu" 
+                    Content="Pracownicy" 
                     Height="30"
                     BorderThickness="0"
                     Click="btnUsun4_Click"/>
@@ -230,22 +230,22 @@
                     >
             <Rectangle x:Name="Rectangle3" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnAktualizuj1" 
-                    Content="Klient" 
+                    Content="Dziennikarze" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnAktualizuj1_Click"/>
             <Button x:Name="btnAktualizuj2" 
-                    Content="Sprzęt" 
+                    Content="Redakcje" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnAktualizuj2_Click"/>
             <Button x:Name="btnAktualizuj3" 
-                    Content="Wypożyczenie" 
+                    Content="Wolontariusze" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnAktualizuj3_Click"/>
             <Button x:Name="btnAktualizuj4" 
-                    Content="Rodzaj Sprzętu" 
+                    Content="Pracownicy" 
                     Height="30"
                     BorderThickness="0"
                     Click="btnAktualizuj4_Click"/>
@@ -261,22 +261,22 @@
                     >
             <Rectangle x:Name="Rectangle4" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnWyswietl1" 
-                    Content="Klient" 
+                    Content="Dziennikarze" 
                     Height="30"
                     BorderThickness="0 0 0 1" 
                     Click="btnWyswietl1_Click"/>
             <Button x:Name="btnWyswietl2" 
-                    Content="Sprzęt" 
+                    Content="Redakcje" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnWyswietl2_Click"/>
             <Button x:Name="btnWyswietl3" 
-                    Content="Wypożyczenie" 
+                    Content="Wolontariusze" 
                     Height="30"
                     BorderThickness="0 0 0 1"
                     Click="btnWyswietl3_Click"/>
             <Button x:Name="btnWyswietl4" 
-                    Content="Rodzaj Sprzętu" 
+                    Content="Pracownicy" 
                     Height="30"
                     BorderThickness="0"
                     Click="btnWyswietl4_Click"/>
