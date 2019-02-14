@@ -39,8 +39,8 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1038*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4.8"/>
         </Grid.ColumnDefinitions>
         <Image Source="Resources/2.jpeg" Stretch="UniformToFill"  Grid.ColumnSpan="2" Margin="-8,0,-7.8,-0.4">
             <Image.Effect>
@@ -357,7 +357,8 @@
                        Background="Transparent" 
                        Opacity="0.85"/>
         </Grid>
-        <DockPanel Grid.ColumnSpan="2" Background="Black" Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,0.2,0">
+        <DockPanel Background="Black" Grid.ColumnSpan="2"  Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,0.2,0">
+
             <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Black" DockPanel.Dock="Right" Width="20">
                 <StackPanel>
                     <Image Source="Resources/close.png" Height="17" Width="17"></Image>
