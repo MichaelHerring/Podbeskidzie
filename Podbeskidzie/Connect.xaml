@@ -51,12 +51,12 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="MainGrid">
-        <MediaElement Source="Resources/podbeskidzie.mp4" Stretch="UniformToFill" Margin="-95,0,-0.4,-8.6">
+        <MediaElement Source="Resources/Oficjalnie.mp4" Stretch="UniformToFill" Margin="-95,0,-0.4,-8.6">
             <!--<Image.Effect>
                 <BlurEffect Radius="10"/>
             </Image.Effect>-->
         </MediaElement>
-        <Rectangle Fill="Black" Width="450" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="-10,-20,9.6,-8.6" Grid.RowSpan="2"/>
+        <Rectangle Fill="Black" Width="460" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="-10,-20,-0.4,-8.6"/>
         <Grid Width="224" Height="160" VerticalAlignment="Top" Margin="0 140 0 0">
             <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
             <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -124,7 +124,7 @@
                 </Button.Effect>
             </Button>
         </Grid>
-        
+
         <DockPanel Grid.ColumnSpan="1" Background="Transparent" Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,-0.4,0" Grid.RowSpan="2">
             <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Transparent" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>

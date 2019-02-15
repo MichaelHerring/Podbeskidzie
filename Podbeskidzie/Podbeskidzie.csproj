@@ -188,10 +188,12 @@
     <Resource Include="Resources\minimize.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\podbeskidzie.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Resources\Podbeskidzie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Oficjalnie.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
