@@ -193,17 +193,20 @@ namespace Podbeskidzie
 
         private void btnDodaj2_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new InsertRedakcje();
+            StackPanel1.Visibility = Visibility.Hidden;
         }
 
         private void btnDodaj3_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new InsertWolontariusze();
+            StackPanel1.Visibility = Visibility.Hidden;
         }
 
         private void btnDodaj4_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new InsertPracownicy();
+            StackPanel1.Visibility = Visibility.Hidden;
         }
 
         //Lista rozwijana Usuwanie
@@ -215,17 +218,20 @@ namespace Podbeskidzie
 
         private void btnUsun2_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new DeleteRedakcje();
+            StackPanel2.Visibility = Visibility.Hidden;
         }
 
         private void btnUsun3_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new DeleteWolontariusze();
+            StackPanel2.Visibility = Visibility.Hidden;
         }
 
         private void btnUsun4_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new DeletePracownicy();
+            StackPanel2.Visibility = Visibility.Hidden;
         }
 
         //Lista rozwijana Aktualizacja
@@ -237,17 +243,20 @@ namespace Podbeskidzie
 
         private void btnAktualizuj2_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new UpdateRedakcje();
+            StackPanel3.Visibility = Visibility.Hidden;
         }
 
         private void btnAktualizuj3_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new UpdateWolontariusze();
+            StackPanel3.Visibility = Visibility.Hidden;
         }
 
         private void btnAktualizuj4_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Content = new UpdatePracownicy();
+            StackPanel3.Visibility = Visibility.Hidden;
         }
 
         //Lista rozwijana wyświetlanie

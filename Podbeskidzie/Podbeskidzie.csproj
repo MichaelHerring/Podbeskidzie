@@ -61,14 +61,26 @@
     <Compile Include="DeleteDziennikarze.xaml.cs">
       <DependentUpon>DeleteDziennikarze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DeleteKlient.xaml.cs">
-      <DependentUpon>DeleteKlient.xaml</DependentUpon>
+    <Compile Include="DeletePracownicy.xaml.cs">
+      <DependentUpon>DeletePracownicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteRedakcje.xaml.cs">
+      <DependentUpon>DeleteRedakcje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteWolontariusze.xaml.cs">
+      <DependentUpon>DeleteWolontariusze.xaml</DependentUpon>
     </Compile>
     <Compile Include="InsertDziennikarze.xaml.cs">
       <DependentUpon>InsertDziennikarze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InsertKlient.xaml.cs">
-      <DependentUpon>InsertKlient.xaml</DependentUpon>
+    <Compile Include="InsertPracownicy.xaml.cs">
+      <DependentUpon>InsertPracownicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InsertRedakcje.xaml.cs">
+      <DependentUpon>InsertRedakcje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InsertWolontariusze.xaml.cs">
+      <DependentUpon>InsertWolontariusze.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShowTable.xaml.cs">
       <DependentUpon>ShowTable.xaml</DependentUpon>
@@ -76,11 +88,14 @@
     <Compile Include="UpdateDziennikarze.xaml.cs">
       <DependentUpon>UpdateDziennikarze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateKlient.xaml.cs">
-      <DependentUpon>UpdateKlient.xaml</DependentUpon>
+    <Compile Include="UpdatePracownicy.xaml.cs">
+      <DependentUpon>UpdatePracownicy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WynikiWyszukania.xaml.cs">
-      <DependentUpon>WynikiWyszukania.xaml</DependentUpon>
+    <Compile Include="UpdateRedakcje.xaml.cs">
+      <DependentUpon>UpdateRedakcje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateWolontariusze.xaml.cs">
+      <DependentUpon>UpdateWolontariusze.xaml</DependentUpon>
     </Compile>
     <Page Include="Connect.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -90,17 +105,33 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeleteKlient.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="DeletePracownicy.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteRedakcje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteWolontariusze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InsertDziennikarze.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InsertKlient.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="InsertPracownicy.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsertRedakcje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsertWolontariusze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -122,13 +153,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdateKlient.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UpdatePracownicy.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WynikiWyszukania.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UpdateRedakcje.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateWolontariusze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
