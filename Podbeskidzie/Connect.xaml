@@ -128,17 +128,17 @@
         <DockPanel Grid.ColumnSpan="1" Background="Transparent" Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,-0.4,0" Grid.RowSpan="2">
             <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Transparent" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
-                    <Image Source="Resources/close.png" Height="17" Width="17"></Image>
+                    <Image Source="Resources/iconClose.png" Height="20" Width="20"></Image>
+                </StackPanel>
+            </Button>
+            <Button Name="Maxibutton" Click="Maxibutton_Click" Background="Transparent" Margin="0 0 10 0" DockPanel.Dock="Right" Width="20" BorderThickness="0">
+                <StackPanel>
+                    <Image Source="Resources/iconMaximize.png"/>
                 </StackPanel>
             </Button>
             <Button Name="MiniBtn" Click="MiniBtn_Click" Background="Transparent" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
-                    <Image Source="Resources/minimize.png" Height="17" Width="17"></Image>
-                </StackPanel>
-            </Button>
-            <Button Name="Maxibutton" Click="Maxibutton_Click" Background="Transparent" DockPanel.Dock="Right" Width="20" BorderThickness="0">
-                <StackPanel>
-                    <Image Source="Resources/12.png"/>
+                    <Image Source="Resources/iconMinimize.png" Height="17" Width="17"></Image>
                 </StackPanel>
             </Button>
         </DockPanel>

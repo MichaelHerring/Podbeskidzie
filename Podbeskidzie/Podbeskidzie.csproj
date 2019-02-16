@@ -191,6 +191,9 @@
     <Resource Include="Resources\Podbeskidzie.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\iconClose.png" />
+    <Resource Include="Resources\iconMaximize.png" />
+    <Resource Include="Resources\iconMinimize.png" />
     <Content Include="Resources\Oficjalnie.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
