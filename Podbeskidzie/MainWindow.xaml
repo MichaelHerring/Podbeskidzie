@@ -50,8 +50,7 @@
         <!--Menu-->
         <DockPanel x:Name="Navigation" 
                    HorizontalAlignment="Stretch"  
-                   Height="45" 
-                  
+                   Height="45"                   
                    LastChildFill="True" 
                    VerticalAlignment="Top" 
                    Background="#0f1f38" Grid.ColumnSpan="2" Margin="0,20,0.2,0" >
@@ -289,7 +288,7 @@
         </StackPanel>
 
         <!--Frames, Search Panel, Message panel-->
-        <Grid Margin="0,45,0.2,-0.4" Grid.ColumnSpan="2">
+        <Grid Margin="0,65,0.2,-0.4" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="525"/>
                 <ColumnDefinition/>
@@ -303,7 +302,7 @@
             <Frame x:Name="Container" 
                    BorderThickness="0"
                    Grid.Column="0"
-                   NavigationUIVisibility="Hidden"  >
+                   NavigationUIVisibility="Hidden">
             </Frame>
 
             <!--Frame 2-->
@@ -357,8 +356,7 @@
                        Background="Transparent" 
                        Opacity="0.85"/>
         </Grid>
-        <DockPanel Background="Black" Grid.ColumnSpan="2"  Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,0.2,0">
-
+        <DockPanel Background="#0d1a30" Grid.ColumnSpan="2"  Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,0.2,0">
             <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Black" DockPanel.Dock="Right" Width="20" BorderThickness="0">
                 <StackPanel>
                     <Image Source="Resources/iconClose.png" Height="20" Width="20"></Image>
