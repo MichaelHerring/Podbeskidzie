@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Podbeskidzie"
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="525"
-      Title="InsertDziennikarze">
+      Title="InsertDziennikarze"
+      Loaded="Page_Loaded">
     <Page.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -33,6 +34,11 @@
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="IsEditable" Value="True" />
         </Style>
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
@@ -96,7 +102,7 @@
         <Label Grid.Column="0" 
                Grid.Row="3"
                FontSize="18"
-               Content="Redakcja" />
+               Content="ID Redakcji" />
         <Label Grid.Column="0" 
                Grid.Row="4"
                FontSize="18"
@@ -137,20 +143,24 @@
                  FontSize="18"
                  Margin="16 5 16 5"
                  Padding="2"/>
-        <TextBox x:Name="tB3" 
+        <ComboBox x:Name="tB3" 
                  Grid.Column="1"
                  Grid.Row="3"
                  FontSize="18"
-                 BorderThickness="0"
-                 BorderBrush="#FFF0F0F0"
                  Margin="16 5 16 5" 
                  Padding="2"/>
-        <TextBox x:Name="tB4" 
+        <ComboBox x:Name="tB4" 
                  Grid.Column="1"
                  Grid.Row="4"
                  FontSize="18"
                  Margin="16 5 16 5"
-                 Padding="2"/>
+                 Padding="2">
+            <ComboBoxItem>foto</ComboBoxItem>
+            <ComboBoxItem>internet</ComboBoxItem>
+            <ComboBoxItem>prasa</ComboBoxItem>
+            <ComboBoxItem>radio</ComboBoxItem>
+            <ComboBoxItem>TV</ComboBoxItem>
+        </ComboBox>
         <TextBox x:Name="tB5" 
                  Grid.Column="1"
                  Grid.Row="5"

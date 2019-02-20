@@ -359,7 +359,7 @@
                     <Image Source="Resources/iconClose.png" Height="20" Width="20"/>
                 </StackPanel>
             </Button>
-            <Button DockPanel.Dock="Right" Width="35" BorderThickness="0">
+            <Button Name="MaxBtn" DockPanel.Dock="Right" Width="35" BorderThickness="0" Click="MaxBtn_Click">
                 <StackPanel>
                     <Image Source="Resources/iconMaximize.png" Height="20" Width="20"/>
                 </StackPanel>

@@ -24,6 +24,8 @@ namespace Podbeskidzie
     public partial class MainWindow : Window
     {
         SqlConnection connection;
+        DoubleAnimation BorderAnimation1;
+        DoubleAnimation BorderAnimation2;
 
         public MainWindow()
         {
@@ -34,10 +36,26 @@ namespace Podbeskidzie
         {
             InitializeComponent();
             this.connection = connection;
+            InsertDziennikarze.wyslaneInfo += WyswietlKomunikat;
+            InsertRedakcje.wyslaneInfo += WyswietlKomunikat;
         }
 
-        DoubleAnimation BorderAnimation1;
-        DoubleAnimation BorderAnimation2;
+        void WyswietlKomunikat(string komunikat)
+        {
+            MessageViewer.Content += komunikat + "\n";
+            MessageViewer.ScrollToEnd();
+
+            //animacja żarówki
+            DoubleAnimation FadeOut = new DoubleAnimation();
+            FadeOut.From = 1;
+            FadeOut.To = 0;
+            FadeOut.Duration = TimeSpan.FromSeconds(0.2);
+
+            RepeatBehavior Repeat = new RepeatBehavior(8.0);
+            FadeOut.RepeatBehavior = Repeat;
+            ImageBulbBlack.BeginAnimation(OpacityProperty, FadeOut);
+            System.Media.SystemSounds.Beep.Play();
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -187,13 +205,13 @@ namespace Podbeskidzie
         //Lista rozwijana dodawanie
         private void btnDodaj1_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new InsertDziennikarze();
+            Container.Content = new InsertDziennikarze(connection);
             StackPanel1.Visibility = Visibility.Hidden;
         }
 
         private void btnDodaj2_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new InsertRedakcje();
+            Container.Content = new InsertRedakcje(connection);
             StackPanel1.Visibility = Visibility.Hidden;
         }
 
@@ -262,22 +280,26 @@ namespace Podbeskidzie
         //Lista rozwijana wyświetlanie
         private void btnWyswietl1_Click(object sender, RoutedEventArgs e)
         {
-
+            Container2.Content = new ShowTable(connection, "Dziennikarze");
+            StackPanel4.Visibility = Visibility.Hidden;
         }
 
         private void btnWyswietl2_Click(object sender, RoutedEventArgs e)
         {
-
+            Container2.Content = new ShowTable(connection, "Redakcje");
+            StackPanel4.Visibility = Visibility.Hidden;
         }
 
         private void btnWyswietl3_Click(object sender, RoutedEventArgs e)
         {
-
+            Container2.Content = new ShowTable(connection, "Wolontariusze");
+            StackPanel4.Visibility = Visibility.Hidden;
         }
 
         private void btnWyswietl4_Click(object sender, RoutedEventArgs e)
         {
-
+            Container2.Content = new ShowTable(connection, "Pracownicy");
+            StackPanel4.Visibility = Visibility.Hidden;
         }
 
         //Wyszukiwanie
@@ -312,6 +334,18 @@ namespace Podbeskidzie
         private void MiniBtn_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void MaxBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else if (this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
         }
     }
 }

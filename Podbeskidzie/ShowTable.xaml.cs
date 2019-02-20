@@ -24,7 +24,6 @@ namespace Podbeskidzie
     {
         SqlConnection connection;
         string tableName;
-        string ifrr="";
 
         public delegate void WyslijInfo(string komunikat);
         public static event WyslijInfo wyslaneInfo;
@@ -40,14 +39,6 @@ namespace Podbeskidzie
             this.connection = conn;
             this.tableName = x;
         }
-        public ShowTable(SqlConnection conn, string x,string d)
-        {
-            InitializeComponent();
-            this.connection = conn;
-            this.tableName = x;
-            this.ifrr = d;
-        }
-
 
         SqlCommand command;
         SqlDataAdapter adapter;
@@ -56,50 +47,7 @@ namespace Podbeskidzie
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            if (ifrr == "")
-            {
-
-                query = $"select * from {tableName}";
-
-            }
-            else if (ifrr=="ilosc")
-            {
-                query = "select count(w.IDWypozyczenia) as 'Ilosc wypozyczen',w.IDSprzetu,s.Nazwa_Sprzetu,s.Opis,s.Meski_Damski" +
-                    " from Wypozyczenie w join Sprzet s on w.IDSprzetu = s.IDSprzetu " +
-                    "group by w.IDSprzetu,s.Nazwa_Sprzetu,s.Opis,s.Meski_Damski";
-
-
-                ifrr = String.Empty;
-            }
-
-            else if (ifrr == "srednia")
-            {
-                query = "select AVG(DATEDIFF(minute, w.Data_Od, w.Data_Do)) / 60.0 as 'Sredni czas wypozyczenia (h)',w.IDSprzetu,s.Nazwa_Sprzetu,s.Opis,s.Meski_Damski" +
-                    " from Wypozyczenie w join Sprzet s on w.IDSprzetu = s.IDSprzetu" +
-                    " group by w.IDSprzetu,s.Nazwa_Sprzetu,s.Opis,s.Meski_Damski";
-                
-                ifrr = String.Empty;
-            }
-            else if (ifrr == "l.kategoria")
-            {
-                query = "select count(w.IDWypozyczenia) as 'Ilosc wypozyczen w kategorii',s.IDKategorii,r.Nazwa_Kategorii" +
-                    " from Wypozyczenie w join Sprzet s on w.IDSprzetu = s.IDSprzetu" +
-                    " join Rodzaj_Sprzetu r on s.IDKategorii = r.IDKategorii" +
-                    " group by s.IDKategorii,r.Nazwa_Kategorii";
-                
-                ifrr = String.Empty;
-            }
-            else if (ifrr == "s.kategoria")
-            {
-                query = "select AVG(DATEDIFF(minute, w.Data_Od, w.Data_Do)) / 60.0 as 'Sredni czas wypozyczenia (h)',s.IDKategorii,r.Nazwa_Kategorii " +
-                    "from Wypozyczenie w join Sprzet s on w.IDSprzetu = s.IDSprzetu" +
-                    " join Rodzaj_Sprzetu r on s.IDKategorii = r.IDKategorii" +
-                    " group by s.IDKategorii,r.Nazwa_Kategorii";
-                
-                ifrr = String.Empty;
-            }
-
-
+            query = $"select * from {tableName}";
             command = new SqlCommand(query, connection);
                 adapter = new SqlDataAdapter(command);
                 table = new DataTable();
@@ -112,9 +60,7 @@ namespace Podbeskidzie
                 catch (Exception exc)
                 {
                     wyslaneInfo(exc.Message);
-
-                }
-           
+                }           
         }
     }
 }

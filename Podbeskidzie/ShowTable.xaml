@@ -13,9 +13,9 @@
         <Style TargetType="{x:Type DataGridCell}">
             <Style.Triggers>
                 <Trigger Property="DataGridCell.IsSelected" Value="True">
-                    <Setter Property="Background" Value="#FFF99A58" />
+                    <Setter Property="Background" Value="#f55449" />
                     <Setter Property="Foreground" Value="Black" />
-                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="BorderBrush" Value="#f55449" />
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -25,7 +25,7 @@
                   RowBackground="White" 
                   IsReadOnly="True" >
             <DataGrid.Background>
-                <SolidColorBrush Color="White" Opacity="0.6"></SolidColorBrush>
+                <SolidColorBrush Color="Black" Opacity="0.5"></SolidColorBrush>
             </DataGrid.Background>
         </DataGrid>
     </Grid>
