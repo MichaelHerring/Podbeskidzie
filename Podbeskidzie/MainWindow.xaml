@@ -38,10 +38,6 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="4.8"/>
-        </Grid.ColumnDefinitions>
         <Image Source="Resources/2.jpeg" Stretch="UniformToFill"  Grid.ColumnSpan="2" Margin="-8,0,-7.8,-0.4">
             <Image.Effect>
                 <BlurEffect Radius="1"/>
@@ -50,10 +46,11 @@
         <!--Menu-->
         <DockPanel x:Name="Navigation" 
                    HorizontalAlignment="Stretch"  
-                   Height="45"                   
+                   Height="40"                   
                    LastChildFill="True" 
                    VerticalAlignment="Top" 
-                   Background="#0f1f38" Grid.ColumnSpan="2" Margin="0,20,0.2,0" >
+                   Background="#0f1f38" 
+                   Margin="0,25,0,0" >
             <DockPanel.Effect>
                 <DropShadowEffect BlurRadius="6" 
                                   Direction="270" 
@@ -103,7 +100,7 @@
                     Click="btn4_Click" />
             <Grid Margin="0">
                 <DockPanel x:Name="SearchPanel" LastChildFill="False" HorizontalAlignment="Right" Margin="0 0 8 0">
-                    <Label Content="Tabela:" Foreground="White" Padding="8 6" Margin="0,10,0,-0.2" Width="55" />
+                    <Label Content="Tabela:" Foreground="White" Padding="8 6" Margin="0,5,0,0" Width="55" />
                     <ComboBox x:Name="ComboBoxTabela" Height="24" Width="100" DropDownClosed="ComboBoxTabela_DropDownClosed">
                         <ComboBox.Effect>
                             <DropShadowEffect BlurRadius="4"
@@ -115,7 +112,7 @@
                         <ComboBoxItem>Wypozyczenie</ComboBoxItem>
                         <ComboBoxItem>Rodzaj_Sprzetu</ComboBoxItem>
                     </ComboBox>
-                    <Label Content="Kolumna:" Foreground="White" Padding="8 6" Margin="0,10,0,-0.2"/>
+                    <Label Content="Kolumna:" Foreground="White" Padding="8 6" Margin="0,5,0,0"/>
                     <ComboBox x:Name="ComboBoxKolumna" Height="24" Width="100">
                         <ComboBox.Effect>
                             <DropShadowEffect BlurRadius="4"
@@ -123,7 +120,7 @@
                                               Opacity="0.3"/>
                         </ComboBox.Effect>
                     </ComboBox>
-                    <Label Content="Wartość:" Foreground="White" Padding="8 6" Margin="0,10,0,-0.2" Width="61"/>
+                    <Label Content="Wartość:" Foreground="White" Padding="8 6" Margin="0,5,0,0" Width="61"/>
                     <TextBox x:Name="TextBoxWartosc" Height="24" Width="110" BorderThickness="1 1 0 1" Padding="2" KeyDown="TextBoxWartosc_KeyDown"/>
                     <Button x:Name="btnWyszukaj" Height="24" Width="24" Background="White" Foreground="Black" BorderThickness="0 1 1 1" BorderBrush="#FFABADB3" Click="btnWyszukaj_Click" >
                         <Image Source="Resources/search.png" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
@@ -317,9 +314,9 @@
             <Label
                 Grid.Row="1"
                 Grid.ColumnSpan="3"
-                Background="#f4f4ef"
+                Background="#CACFD6"
                 BorderThickness="2"
-                BorderBrush="#353c3f"
+                BorderBrush="#0f1f38"
                 Opacity="0.95">
                 <Label.Effect>
                     <DropShadowEffect BlurRadius="8" 
@@ -356,20 +353,20 @@
                        Background="Transparent" 
                        Opacity="0.85"/>
         </Grid>
-        <DockPanel Background="#0d1a30" Grid.ColumnSpan="2"  Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,0.2,0">
-            <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Black" DockPanel.Dock="Right" Width="20" BorderThickness="0">
+        <DockPanel Background="#0d1a30" Height="25" VerticalAlignment="Top" LastChildFill="False">
+            <Button Name="ZamknijButton" Click="ZamknijButton_Click" DockPanel.Dock="Right" Width="35"  BorderThickness="0">
                 <StackPanel>
-                    <Image Source="Resources/iconClose.png" Height="20" Width="20"></Image>
+                    <Image Source="Resources/iconClose.png" Height="20" Width="20"/>
                 </StackPanel>
             </Button>
-            <Button Background="Black" DockPanel.Dock="Right" Width="20" Height="20" Margin="0 0 10 0" BorderThickness="0">
+            <Button DockPanel.Dock="Right" Width="35" BorderThickness="0">
                 <StackPanel>
-                    <Image Source="Resources/iconMaximize.png"/>
+                    <Image Source="Resources/iconMaximize.png" Height="20" Width="20"/>
                 </StackPanel>
             </Button>
-            <Button Name="MiniBtn" Click="MiniBtn_Click" Background="Black" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20" BorderThickness="0">
+            <Button Name="MiniBtn" Click="MiniBtn_Click" DockPanel.Dock="Right" Width="35" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="Resources/iconMinimize.png" Height="20" Width="20"></Image>
+                    <Image Source="Resources/iconMinimize.png" Height="20" Width="20"/>
                 </StackPanel>
             </Button>
         </DockPanel>

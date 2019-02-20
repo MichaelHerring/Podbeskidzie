@@ -6,9 +6,7 @@
       xmlns:local="clr-namespace:Podbeskidzie"
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="525"
-      Background="Transparent"
       Title="InsertPracownicy">
-
     <Page.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -58,6 +56,9 @@
             </Setter>
         </Style>
     </Page.Resources>
+    <Page.Background>
+        <SolidColorBrush Color="#000" Opacity="0.5"></SolidColorBrush>
+    </Page.Background>
     <Grid
         HorizontalAlignment="Center"
         VerticalAlignment="Top"
@@ -83,7 +84,7 @@
         <Label Grid.Column="0" 
                Grid.Row="0"
                FontSize="18"
-               Content="ID Dziennikarza" />
+               Content="ID Pracownika" />
         <Label Grid.Column="0" 
                Grid.Row="1"
                FontSize="18"

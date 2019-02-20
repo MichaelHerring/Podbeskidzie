@@ -51,12 +51,12 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="MainGrid">
-        <MediaElement Source="Resources/Oficjalnie.mp4" Stretch="UniformToFill" Margin="-95,0,-0.4,-8.6">
+        <MediaElement Source="Resources/Oficjalnie.mp4" Stretch="UniformToFill" Margin="-95,-9,0,0">
             <!--<Image.Effect>
                 <BlurEffect Radius="10"/>
             </Image.Effect>-->
         </MediaElement>
-        <Rectangle Fill="Black" Width="460" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" Margin="-10,-20,-0.4,-8.6"/>
+        <Rectangle Fill="Black" Width="460" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" />
         <Grid Width="224" Height="160" VerticalAlignment="Top" Margin="0 140 0 0">
             <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
             <Rectangle Fill="White" Width="220" Height="30" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -124,24 +124,18 @@
                 </Button.Effect>
             </Button>
         </Grid>
-
-        <DockPanel Grid.ColumnSpan="1" Background="Transparent" Height="20" VerticalAlignment="Top" LastChildFill="False" Margin="0,0,-0.4,0" Grid.RowSpan="2">
-            <Button Name="ZamknijButton" Click="ZamknijButton_Click" Background="Transparent" DockPanel.Dock="Right" Width="20" BorderThickness="0">
-                <StackPanel>
-                    <Image Source="Resources/iconClose.png" Height="20" Width="20"></Image>
-                </StackPanel>
-            </Button>
-            <Button Name="Maxibutton" Click="Maxibutton_Click" Background="Transparent" Margin="0 0 10 0" DockPanel.Dock="Right" Width="20" BorderThickness="0">
-                <StackPanel>
-                    <Image Source="Resources/iconMaximize.png"/>
-                </StackPanel>
-            </Button>
-            <Button Name="MiniBtn" Click="MiniBtn_Click" Background="Transparent" Margin="10,0,10,0" DockPanel.Dock="Right" Width="20" BorderThickness="0">
-                <StackPanel>
-                    <Image Source="Resources/iconMinimize.png" Height="17" Width="17"></Image>
-                </StackPanel>
-            </Button>
-        </DockPanel>
-        <Image Source="Resources/Podbeskidzie.png" HorizontalAlignment="Center" Height="100" Margin="0,54,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <Button Name="ZamknijButton" 
+                Click="ZamknijButton_Click" 
+                Background="Transparent" 
+                Width="35"
+                Height="25"
+                BorderThickness="0" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top">
+            <StackPanel>
+                <Image Source="Resources/iconClose.png" Height="20" Width="20"></Image>
+            </StackPanel>
+        </Button>
+            <Image Source="Resources/Podbeskidzie.png" HorizontalAlignment="Center" Height="100" Margin="0,54,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

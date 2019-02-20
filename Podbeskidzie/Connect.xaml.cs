@@ -60,15 +60,15 @@ namespace Podbeskidzie
         {
             //builder.DataSource = "DESKTOP-LVKIRTO";
             builder.DataSource = "localhost";
-            builder.InitialCatalog = "Wypozyczalnia";
-            builder.UserID = tB1.Text;
-            builder.Password = passwordBox.Password;
-
+            builder.InitialCatalog = "Podbeskidzie";
+            //builder.UserID = tB1.Text;
+            //builder.Password = passwordBox.Password;
+            builder.IntegratedSecurity = true;
             connection.ConnectionString = builder.ConnectionString;
 
             try
             {
-                //connection.Open();
+                connection.Open();
             }
             catch (SqlException exc)
             {
@@ -80,9 +80,9 @@ namespace Podbeskidzie
                 }
             }
 
-            if (/*connection.State == System.Data.ConnectionState.Open*/ true)
+            if (connection.State == System.Data.ConnectionState.Open)
             {
-                tB1.Text = "";
+                tB1.Clear();
                 passwordBox.Clear();
                 MainWindow win = new MainWindow(connection);
                 win.Show();
@@ -101,10 +101,10 @@ namespace Podbeskidzie
             passwordBox.Background = Brushes.White;
         }
 
-        //kliknięcie entera
+        //kliknięcie enter lub tab
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 btn1_Click(this, new RoutedEventArgs());
             }
@@ -118,17 +118,6 @@ namespace Podbeskidzie
         private void ZamknijButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
-        }
-
-        private void Maxibutton_Click(object sender, RoutedEventArgs e)
-        {
-            //this.WindowState = WindowState.Maximized;
-            
-        }
-
-        private void MiniBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
         }
     }
 }
