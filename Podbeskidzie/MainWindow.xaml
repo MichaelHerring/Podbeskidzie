@@ -38,11 +38,31 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Image Source="Resources/2.jpeg" Stretch="UniformToFill"  Grid.ColumnSpan="2" Margin="-8,0,-7.8,-0.4">
+        <Image Source="Resources/2.jpeg" Stretch="UniformToFill" >
             <Image.Effect>
                 <BlurEffect Radius="1"/>
             </Image.Effect>
         </Image>
+        
+        <!--Górny pasek-->
+        <DockPanel x:Name="WindowBar" MouseLeftButtonDown="WindowBar_MouseLeftButtonDown" Background="#0d1a30" Height="25" VerticalAlignment="Top" LastChildFill="False">
+            <Button Name="ZamknijButton" Click="ZamknijButton_Click" DockPanel.Dock="Right" Width="35"  BorderThickness="0" Background="Transparent">
+                <StackPanel>
+                    <Image Source="Resources/iconClose.png" Height="16" Width="16"/>
+                </StackPanel>
+            </Button>
+            <Button Name="MaxBtn" DockPanel.Dock="Right" Width="35" BorderThickness="0" Background="Transparent" Click="MaxBtn_Click">
+                <StackPanel>
+                    <Image Source="Resources/iconMaximize.png" Height="16" Width="16"/>
+                </StackPanel>
+            </Button>
+            <Button Name="MiniBtn" Click="MiniBtn_Click" DockPanel.Dock="Right" Width="35" BorderThickness="0" Background="Transparent">
+                <StackPanel>
+                    <Image Source="Resources/iconMinimize.png" Height="16" Width="16"/>
+                </StackPanel>
+            </Button>
+        </DockPanel>
+        
         <!--Menu-->
         <DockPanel x:Name="Navigation" 
                    HorizontalAlignment="Stretch"  
@@ -107,10 +127,10 @@
                                               Direction="330"
                                               Opacity="0.3"/>
                         </ComboBox.Effect>
-                        <ComboBoxItem>Klient</ComboBoxItem>
-                        <ComboBoxItem>Sprzet</ComboBoxItem>
-                        <ComboBoxItem>Wypozyczenie</ComboBoxItem>
-                        <ComboBoxItem>Rodzaj_Sprzetu</ComboBoxItem>
+                        <ComboBoxItem>Dziennikarze</ComboBoxItem>
+                        <ComboBoxItem>Redakcje</ComboBoxItem>
+                        <ComboBoxItem>Wolontariusze</ComboBoxItem>
+                        <ComboBoxItem>Pracownicy</ComboBoxItem>
                     </ComboBox>
                     <Label Content="Kolumna:" Foreground="White" Padding="8 6" Margin="0,5,0,0"/>
                     <ComboBox x:Name="ComboBoxKolumna" Height="24" Width="100">
@@ -353,22 +373,6 @@
                        Background="Transparent" 
                        Opacity="0.85"/>
         </Grid>
-        <DockPanel Background="#0d1a30" Height="25" VerticalAlignment="Top" LastChildFill="False">
-            <Button Name="ZamknijButton" Click="ZamknijButton_Click" DockPanel.Dock="Right" Width="35"  BorderThickness="0">
-                <StackPanel>
-                    <Image Source="Resources/iconClose.png" Height="20" Width="20"/>
-                </StackPanel>
-            </Button>
-            <Button Name="MaxBtn" DockPanel.Dock="Right" Width="35" BorderThickness="0" Click="MaxBtn_Click">
-                <StackPanel>
-                    <Image Source="Resources/iconMaximize.png" Height="20" Width="20"/>
-                </StackPanel>
-            </Button>
-            <Button Name="MiniBtn" Click="MiniBtn_Click" DockPanel.Dock="Right" Width="35" BorderThickness="0" >
-                <StackPanel>
-                    <Image Source="Resources/iconMinimize.png" Height="20" Width="20"/>
-                </StackPanel>
-            </Button>
-        </DockPanel>
+        
     </Grid>
 </Window>

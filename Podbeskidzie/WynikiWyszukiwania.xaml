@@ -1,0 +1,31 @@
+﻿<Page x:Class="Podbeskidzie.WynikiWyszukiwania"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Podbeskidzie"
+      mc:Ignorable="d" 
+      d:DesignHeight="325" d:DesignWidth="525"
+      Title="WynikiWyszukiwania" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <Style TargetType="{x:Type DataGridCell}">
+            <Style.Triggers>
+                <Trigger Property="DataGridCell.IsSelected" Value="True">
+                    <Setter Property="Background" Value="#f55449" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="BorderBrush" Value="#f55449" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <DataGrid x:Name="DataGr" 
+                  RowBackground="White" 
+                  IsReadOnly="True" >
+            <DataGrid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5"></SolidColorBrush>
+            </DataGrid.Background>
+        </DataGrid>
+    </Grid>
+</Page>

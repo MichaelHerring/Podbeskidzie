@@ -57,7 +57,7 @@ namespace Podbeskidzie
                     reader.Read();
                     tB1.Text = reader.GetString(1);
                     tB2.Text = reader.GetString(2);
-                    tB3.Text = reader.GetDateTime(3).ToString();
+                    tB3.Text = reader.GetInt16(3).ToString();
                     tB4.Text = reader.GetString(4);
                     tB5.Text = reader.GetString(5);
                     tB6.Text = reader.GetString(6);

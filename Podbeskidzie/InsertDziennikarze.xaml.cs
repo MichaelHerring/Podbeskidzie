@@ -87,7 +87,6 @@ namespace Podbeskidzie
                     if (tB3.Text[i] == ' ') 
                     {
                         trimmedID = tB3.Text.Remove(i); //usunięcie wszystkich znaków po pierwszej spacji (zostaje tylko ID)
-                        MessageBox.Show(trimmedID);
                         break;
                     }
                 }

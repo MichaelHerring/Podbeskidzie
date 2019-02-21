@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Podbeskidzie"
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="525"
-      Title="UpdateDziennikarze">
+      Title="UpdateDziennikarze"
+      Loaded="Page_Loaded">
     <Page.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -33,6 +34,11 @@
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="IsEditable" Value="True" />
         </Style>
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
@@ -149,43 +155,43 @@
                  Grid.Row="1"
                  FontSize="18"
                  Margin="16 5 16 5" 
-                 Padding="2"
-                 IsEnabled="False"/>
+                 Padding="2"/>
         <TextBox x:Name="tB2" 
                  Grid.Column="1"
                  Grid.Row="2"
                  FontSize="18"
                  Margin="16 5 16 5"
-                 Padding="2"
-                 IsEnabled="False"/>
-        <TextBox x:Name="tB3" 
+                 Padding="2"/>
+        <ComboBox x:Name="tB3" 
                  Grid.Column="1"
                  Grid.Row="3"
                  FontSize="18"
-                 Margin="16 5 16 5"
-                 Padding="2"
-                 IsEnabled="False"/>
-        <TextBox x:Name="tB4" 
+                 Margin="16 5 5 5"
+                 Padding="2"/>
+        <ComboBox x:Name="tB4" 
                  Grid.Column="1"
                  Grid.Row="4"
                  FontSize="18"
-                 Margin="16 5 16 5"
-                 Padding="2"
-                 IsEnabled="False"/>
+                 Margin="16 5 5 5"
+                 Padding="2">
+            <ComboBoxItem>foto</ComboBoxItem>
+            <ComboBoxItem>internet</ComboBoxItem>
+            <ComboBoxItem>prasa</ComboBoxItem>
+            <ComboBoxItem>radio</ComboBoxItem>
+            <ComboBoxItem>TV</ComboBoxItem>
+        </ComboBox>
         <TextBox x:Name="tB5" 
                  Grid.Column="1"
                  Grid.Row="5"
                  FontSize="18"
                  Margin="16 5 16 5"
-                 Padding="2"
-                 IsEnabled="False"/>
+                 Padding="2"/>
         <TextBox x:Name="tB6"
                  Grid.Column="1"
                  Grid.Row="6"
                  FontSize="18"
                  Margin="16 5 16 5"
-                 Padding="2"
-                 IsEnabled="False"/>
+                 Padding="2"/>
         <Button x:Name="btn2"
                 Style="{DynamicResource RoundedButtonStyle}"
                 Content="Aktualizuj" 

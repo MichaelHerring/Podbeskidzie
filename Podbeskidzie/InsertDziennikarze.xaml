@@ -147,13 +147,13 @@
                  Grid.Column="1"
                  Grid.Row="3"
                  FontSize="18"
-                 Margin="16 5 16 5" 
+                 Margin="16 5 5 5" 
                  Padding="2"/>
         <ComboBox x:Name="tB4" 
                  Grid.Column="1"
                  Grid.Row="4"
                  FontSize="18"
-                 Margin="16 5 16 5"
+                 Margin="16 5 5 5"
                  Padding="2">
             <ComboBoxItem>foto</ComboBoxItem>
             <ComboBoxItem>internet</ComboBoxItem>

@@ -97,6 +97,9 @@
     <Compile Include="UpdateWolontariusze.xaml.cs">
       <DependentUpon>UpdateWolontariusze.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WynikiWyszukiwania.xaml.cs">
+      <DependentUpon>WynikiWyszukiwania.xaml</DependentUpon>
+    </Compile>
     <Page Include="Connect.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -162,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpdateWolontariusze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WynikiWyszukiwania.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

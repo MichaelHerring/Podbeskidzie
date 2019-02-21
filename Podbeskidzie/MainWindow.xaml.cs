@@ -39,6 +39,11 @@ namespace Podbeskidzie
             InsertDziennikarze.wyslaneInfo += WyswietlKomunikat;
             InsertRedakcje.wyslaneInfo += WyswietlKomunikat;
             DeleteDziennikarze.wyslaneInfo += WyswietlKomunikat;
+            DeleteRedakcje.wyslaneInfo += WyswietlKomunikat;
+            UpdateDziennikarze.wyslaneInfo += WyswietlKomunikat;
+            UpdateRedakcje.wyslaneInfo += WyswietlKomunikat;
+            ShowTable.wyslaneInfo += WyswietlKomunikat;
+            WynikiWyszukiwania.wyslaneInfo += WyswietlKomunikat;
         }
 
         void WyswietlKomunikat(string komunikat)
@@ -237,7 +242,7 @@ namespace Podbeskidzie
 
         private void btnUsun2_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new DeleteRedakcje();
+            Container.Content = new DeleteRedakcje(connection);
             StackPanel2.Visibility = Visibility.Hidden;
         }
 
@@ -256,13 +261,13 @@ namespace Podbeskidzie
         //Lista rozwijana Aktualizacja
         private void btnAktualizuj1_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new UpdateDziennikarze();
+            Container.Content = new UpdateDziennikarze(connection);
             StackPanel3.Visibility = Visibility.Hidden;
         }
 
         private void btnAktualizuj2_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new UpdateRedakcje();
+            Container.Content = new UpdateRedakcje(connection);
             StackPanel3.Visibility = Visibility.Hidden;
         }
 
@@ -306,19 +311,63 @@ namespace Podbeskidzie
         //Wyszukiwanie
         private void ComboBoxTabela_DropDownClosed(object sender, EventArgs e)
         {
-
+            try
+            {
+                //czyszczenie comboboxa z kolumnami
+                ComboBoxKolumna.Items.Clear();
+                //dodawanie nazw kolumn
+                if (ComboBoxTabela.SelectedItem != null)
+                {
+                    string selectedTable = ComboBoxTabela.Text;
+                    string query = $"select * from {selectedTable}";
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    foreach (DataColumn c in table.Columns)
+                    {
+                        ComboBoxKolumna.Items.Add(c.ToString());
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                WyswietlKomunikat(exc.Message);
+            }
         }
 
         private void btnWyszukaj_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                string tabela = ComboBoxTabela.Text;
+                string kolumna = ComboBoxKolumna.Text;
+                string wartosc = TextBoxWartosc.Text;
+                if (ComboBoxTabela.SelectedItem == null || ComboBoxKolumna.SelectedItem == null || wartosc == String.Empty)
+                {
+                    WyswietlKomunikat("Wybierz tabelę i kolumnę oraz wprowadź wartość.");
+                }
+                else
+                {
+                    string query = $"select * from {tabela} where {kolumna} like '{wartosc}'";
+                    Container2.Content = new WynikiWyszukiwania(query, connection);
+                }
+            }
+            catch (Exception exc)
+            {
+                WyswietlKomunikat(exc.Message);
+            }
         }
 
         private void TextBoxWartosc_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.Key == Key.Enter)
+            {
+                btnWyszukaj_Click(this, new RoutedEventArgs());
+            }
         }
 
+        //Działanie okna
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             StackPanel1.Visibility = Visibility.Hidden;
@@ -347,6 +396,11 @@ namespace Podbeskidzie
             {
                 this.WindowState = WindowState.Maximized;
             }
+        }
+
+        private void WindowBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove(); //"chwytanie okna i przesuwanie"
         }
     }
 }
