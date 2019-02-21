@@ -38,6 +38,7 @@ namespace Podbeskidzie
             this.connection = connection;
             InsertDziennikarze.wyslaneInfo += WyswietlKomunikat;
             InsertRedakcje.wyslaneInfo += WyswietlKomunikat;
+            DeleteDziennikarze.wyslaneInfo += WyswietlKomunikat;
         }
 
         void WyswietlKomunikat(string komunikat)
@@ -230,7 +231,7 @@ namespace Podbeskidzie
         //Lista rozwijana Usuwanie
         private void btnUsun1_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new DeleteDziennikarze();
+            Container.Content = new DeleteDziennikarze(connection);
             StackPanel2.Visibility = Visibility.Hidden;
         }
 
