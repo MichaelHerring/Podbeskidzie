@@ -23,20 +23,20 @@ namespace Podbeskidzie
     {
         SqlConnection connection;
 
-        string query = "select * from Dziennikarze where id_dziennikarza = @ID";
+        string query = "select * from Dziennikarze where ID_Dziennikarza = @ID";
         string update = @"update Dziennikarze 
-                        set imie = @imie, 
-                        nazwisko = @nazwisko, 
-                        redakcja = @redakcja, 
-                        rodzaj = @rodzaj, 
-                        telefon = @telefon, 
-                        email = @email
-                        where id_dziennikarza = @ID";
+                        set Imie = @imie, 
+                        Nazwisko = @nazwisko, 
+                        ID_Redakcji = @redakcja, 
+                        Rodzaj = @rodzaj, 
+                        Telefon = @telefon, 
+                        Email = @email
+                        where ID_Dziennikarza = @ID";
         SqlCommand command;
         SqlCommand updateCommand;
         SqlDataReader reader;
 
-        string fillID = "select id_redakcji, nazwa from Redakcje order by id_redakcji";
+        string fillID = "select ID_Redakcji, Nazwa from Redakcje order by ID_Redakcji";
         SqlCommand command1;
         SqlDataReader reader1;
 

@@ -23,8 +23,8 @@ namespace Podbeskidzie
     {
         SqlConnection connection;
 
-        string query = "select * from Dziennikarze where id_dziennikarza = @ID";
-        string delete = "delete from Dziennikarze where id_dziennikarza = @ID";
+        string query = "select * from Dziennikarze where ID_Dziennikarza = @ID";
+        string delete = "delete from Dziennikarze where ID_Dziennikarza = @ID";
         SqlCommand command;
         SqlCommand delCommand;
         SqlDataReader reader;

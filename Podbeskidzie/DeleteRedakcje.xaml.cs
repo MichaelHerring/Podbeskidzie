@@ -23,8 +23,8 @@ namespace Podbeskidzie
     {
         SqlConnection connection;
 
-        string query = "select * from Redakcje where id_redakcji = @ID";
-        string delete = "delete from Redakcje where id_redakcji = @ID";
+        string query = "select * from Redakcje where ID_Redakcji = @ID";
+        string delete = "delete from Redakcje where ID_Redakcji = @ID";
         SqlCommand command;
         SqlCommand delCommand;
         SqlDataReader reader;
@@ -56,7 +56,7 @@ namespace Podbeskidzie
                     reader = command.ExecuteReader();
                     reader.Read();
                     tB1.Text = reader.GetString(1);
-                    tB2.Text = reader.GetDecimal(2).ToString();
+                    tB2.Text = reader.GetString(2);
                     tB3.Text = reader.GetString(3);
                     tB4.Text = reader.GetString(4);
                     reader.Close(); //zamknięcie readera

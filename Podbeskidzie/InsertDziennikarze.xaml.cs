@@ -29,7 +29,7 @@ namespace Podbeskidzie
         string query = "insert into Dziennikarze values(@imie, @nazwisko, @redakcja, @rodzaj, @telefon, @email)";
         SqlCommand command;
 
-        string fillID = "select id_redakcji, nazwa from Redakcje order by id_redakcji";
+        string fillID = "select ID_Redakcji, Nazwa from Redakcje order by ID_Redakcji";
         SqlCommand command1;
         SqlDataReader reader;
 
