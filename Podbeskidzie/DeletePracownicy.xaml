@@ -97,26 +97,23 @@
         <Label Grid.Column="0" 
                Grid.Row="3"
                FontSize="18"
-               Content="Redakcja" />
+               Content="Pesel" />
         <Label Grid.Column="0" 
                Grid.Row="4"
                FontSize="18"
-               Content="Typ" />
+               Content="Telefon" />
         <Label Grid.Column="0" 
                Grid.Row="5"
                FontSize="18"
-               Content="Telefon" />
-        <Label Grid.Column="0" 
-               Grid.Row="6"
-               FontSize="18"
                Content="Email" />
+       
         <Rectangle Fill="White" Grid.Column="1" RadiusY="4" RadiusX="4" Margin="0 4 100 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="3" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="4" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="5" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
-        <Rectangle Fill="White" Grid.Column="1" Grid.Row="6" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        
         <TextBox x:Name="tB0"
                  Grid.Column="1"
                  Grid.Row="0"
@@ -179,17 +176,11 @@
                  Margin="16 5 16 5"
                  Padding="2"
                  IsEnabled="False"/>
-        <TextBox x:Name="tB6"
-                 Grid.Column="1"
-                 Grid.Row="6"
-                 FontSize="18"
-                 Margin="16 5 16 5"
-                 Padding="2"
-                 IsEnabled="False"/>
+        
         <Button x:Name="btn2"
                 Style="{DynamicResource RoundedButtonStyle}"
                 Content="Usuń" 
-                Grid.Row="7" 
+                Grid.Row="6" 
                 Grid.Column="1" 
                 HorizontalAlignment="Center"
                 Margin="0 4 0 0"

@@ -38,10 +38,16 @@ namespace Podbeskidzie
             this.connection = connection;
             InsertDziennikarze.wyslaneInfo += WyswietlKomunikat;
             InsertRedakcje.wyslaneInfo += WyswietlKomunikat;
+            InsertPracownicy.wyslaneInfo += WyswietlKomunikat;
+            InsertWolontariusze.wyslaneInfo += WyswietlKomunikat;
             DeleteDziennikarze.wyslaneInfo += WyswietlKomunikat;
             DeleteRedakcje.wyslaneInfo += WyswietlKomunikat;
+            DeletePracownicy.wyslaneInfo += WyswietlKomunikat;
+            DeleteWolontariusze.wyslaneInfo += WyswietlKomunikat;
             UpdateDziennikarze.wyslaneInfo += WyswietlKomunikat;
             UpdateRedakcje.wyslaneInfo += WyswietlKomunikat;
+            UpdatePracownicy.wyslaneInfo += WyswietlKomunikat;
+            UpdateWolontariusze.wyslaneInfo += WyswietlKomunikat;
             ShowTable.wyslaneInfo += WyswietlKomunikat;
             WynikiWyszukiwania.wyslaneInfo += WyswietlKomunikat;
         }
@@ -223,13 +229,13 @@ namespace Podbeskidzie
 
         private void btnDodaj3_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new InsertWolontariusze();
+            Container.Content = new InsertWolontariusze(connection);
             StackPanel1.Visibility = Visibility.Hidden;
         }
 
         private void btnDodaj4_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new InsertPracownicy();
+            Container.Content = new InsertPracownicy(connection);
             StackPanel1.Visibility = Visibility.Hidden;
         }
 
@@ -248,13 +254,13 @@ namespace Podbeskidzie
 
         private void btnUsun3_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new DeleteWolontariusze();
+            Container.Content = new DeleteWolontariusze(connection);
             StackPanel2.Visibility = Visibility.Hidden;
         }
 
         private void btnUsun4_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new DeletePracownicy();
+            Container.Content = new DeletePracownicy(connection);
             StackPanel2.Visibility = Visibility.Hidden;
         }
 
@@ -273,13 +279,13 @@ namespace Podbeskidzie
 
         private void btnAktualizuj3_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new UpdateWolontariusze();
+            Container.Content = new UpdateWolontariusze(connection);
             StackPanel3.Visibility = Visibility.Hidden;
         }
 
         private void btnAktualizuj4_Click(object sender, RoutedEventArgs e)
         {
-            Container.Content = new UpdatePracownicy();
+            Container.Content = new UpdatePracownicy(connection);
             StackPanel3.Visibility = Visibility.Hidden;
         }
 
