@@ -103,6 +103,13 @@ namespace Podbeskidzie
                     tB5.Text = reader.GetString(5);
                     tB6.Text = reader.GetString(6);
                     reader.Close(); //zamknięcie readera
+                    tB1.IsEnabled = true;
+                    tB2.IsEnabled = true;
+                    tB3.IsEnabled = true;
+                    tB4.IsEnabled = true;
+                    tB5.IsEnabled = true;
+                    tB6.IsEnabled = true;
+
                 }
                 catch (Exception exc)
                 {

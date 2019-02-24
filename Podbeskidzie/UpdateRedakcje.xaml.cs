@@ -65,6 +65,10 @@ namespace Podbeskidzie
                     tB3.Text = reader.GetString(3);
                     tB4.Text = reader.GetString(4);
                     reader.Close(); //zamknięcie readera
+                    tB1.IsEnabled = true;
+                    tB2.IsEnabled = true;
+                    tB3.IsEnabled = true;
+                    tB4.IsEnabled = true;
                 }
                 catch (Exception exc)
                 {

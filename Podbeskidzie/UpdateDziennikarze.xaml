@@ -151,24 +151,28 @@
             </Button.Effect>
         </Button>
         <TextBox x:Name="tB1" 
+                 IsEnabled="False"
                  Grid.Column="1"
                  Grid.Row="1"
                  FontSize="18"
                  Margin="16 5 16 5" 
                  Padding="2"/>
         <TextBox x:Name="tB2" 
+                 IsEnabled="False"
                  Grid.Column="1"
                  Grid.Row="2"
                  FontSize="18"
                  Margin="16 5 16 5"
                  Padding="2"/>
         <ComboBox x:Name="tB3" 
+                 IsEnabled="False"
                  Grid.Column="1"
                  Grid.Row="3"
                  FontSize="18"
                  Margin="16 5 5 5"
                  Padding="2"/>
-        <ComboBox x:Name="tB4" 
+        <ComboBox x:Name="tB4"
+                 IsEnabled="False"
                  Grid.Column="1"
                  Grid.Row="4"
                  FontSize="18"
@@ -181,12 +185,14 @@
             <ComboBoxItem>TV</ComboBoxItem>
         </ComboBox>
         <TextBox x:Name="tB5" 
+                 IsEnabled="False"
                  Grid.Column="1"
                  Grid.Row="5"
                  FontSize="18"
                  Margin="16 5 16 5"
                  Padding="2"/>
         <TextBox x:Name="tB6"
+                 IsEnabled="False"
                  Grid.Column="1"
                  Grid.Row="6"
                  FontSize="18"
