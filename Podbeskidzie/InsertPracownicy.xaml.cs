@@ -40,26 +40,17 @@ namespace Podbeskidzie
             this.connection = connection;
         }
 
-
-
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Insert() //metoda do dodawania danych
         {
-            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "" || tB4.Text == "" || tB5.Text=="")
-            {
-                wyslaneInfo("Wprowadź wszystkie dane, żadne pole nie może pozostać puste.");
-            }
-            else
+            try
             {
                 command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Imie", tB1.Text);
                 command.Parameters.AddWithValue("@Nazwisko", tB2.Text);
-                command.Parameters.AddWithValue("@Pesel",Convert.ToDecimal(tB3.Text));
+                command.Parameters.AddWithValue("@Pesel", Convert.ToDecimal(tB3.Text));
                 command.Parameters.AddWithValue("@Telefon", tB4.Text);
                 command.Parameters.AddWithValue("@Email", tB5.Text);
-                
-            }
-            try
-            {
+
                 command.ExecuteNonQuery();
                 wyslaneInfo("Dodano rekord do tabeli Pracownicy.");
                 tB1.Text = "";
@@ -71,6 +62,29 @@ namespace Podbeskidzie
             catch (Exception exc)
             {
                 wyslaneInfo(exc.Message);
+            }
+        }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "")
+            {
+                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko, Pesel.");
+            }
+            else if (tB4.Text == "" || tB5.Text == "")
+            {
+                if (MessageBox.Show("Czy na pewno chcesz zostawić puste pola?", "Uwaga", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    Insert();
+                }
+                else
+                {
+                    wyslaneInfo("Anulowano dodawanie danych.");
+                }
+            }
+            else
+            {
+                Insert();                
             }
         }
     }

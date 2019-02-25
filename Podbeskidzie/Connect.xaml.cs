@@ -58,8 +58,8 @@ namespace Podbeskidzie
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            builder.DataSource = "DESKTOP-LVKIRTO";
-            //builder.DataSource = "localhost";
+            //builder.DataSource = "DESKTOP-LVKIRTO";
+            builder.DataSource = "localhost";
             builder.InitialCatalog = "Podbeskidzie";
             //builder.UserID = tB1.Text;
             //builder.Password = passwordBox.Password;

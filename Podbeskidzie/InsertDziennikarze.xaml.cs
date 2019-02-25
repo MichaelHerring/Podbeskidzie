@@ -73,18 +73,14 @@ namespace Podbeskidzie
             }
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Insert() //metoda do dodawania danych
         {
-            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "" || tB4.Text == "" || tB5.Text == "" || tB6.Text == "")
-            {
-                wyslaneInfo("Wprowadź wszystkie dane, żadne pole nie może pozostać puste.");
-            }
-            else
+            try
             {
                 string trimmedID = tB3.Text;
                 for (int i = 0; i < tB3.Text.Length - 1; i++) //usuwanie nazwy redakcji, aby w poleceniu zostało tylko ID
                 {
-                    if (tB3.Text[i] == ' ') 
+                    if (tB3.Text[i] == ' ')
                     {
                         trimmedID = tB3.Text.Remove(i); //usunięcie wszystkich znaków po pierwszej spacji (zostaje tylko ID)
                         break;
@@ -98,23 +94,43 @@ namespace Podbeskidzie
                 command.Parameters.AddWithValue("@telefon", tB5.Text);
                 command.Parameters.AddWithValue("@email", tB6.Text);
 
-                try
-                {
-                    command.ExecuteNonQuery();
-                    wyslaneInfo("Dodano rekord do tabeli Dziennikarze.");
-                    tB1.Text = "";
-                    tB2.Text = "";
-                    tB3.Text = "";
-                    tB4.Text = "";
-                    tB5.Text = "";
-                    tB6.Text = "";
-                }
-                catch (Exception exc)
-                {
-                    wyslaneInfo(exc.Message);
-                }
+                command.ExecuteNonQuery();
+                wyslaneInfo("Dodano rekord do tabeli Dziennikarze.");
+                tB1.Text = "";
+                tB2.Text = "";
+                tB3.Text = "";
+                tB4.Text = "";
+                tB5.Text = "";
+                tB6.Text = "";
+            }
+            catch (Exception exc)
+            {
+                wyslaneInfo(exc.Message);
             }
         }
 
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "" || tB4.Text == "")
+            {
+                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko, ID Redakcji, Typ.");
+            }
+            else if (tB5.Text == "" || tB6.Text == "")
+            {
+                if (MessageBox.Show("Czy na pewno chcesz zostawić puste pola?", "Uwaga", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    Insert();
+                }
+                else
+                {
+                    wyslaneInfo("Anulowano dodawanie danych.");
+                }
+            }
+            else
+            {
+                Insert();
+            }
+        }
     }
 }

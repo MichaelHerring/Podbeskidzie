@@ -40,23 +40,16 @@ namespace Podbeskidzie
             this.connection = connection;
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Insert() //metoda do dodawania danych
         {
-            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "" || tB4.Text == "")
-            {
-                wyslaneInfo("Wprowadź wszystkie dane, żadne pole nie może pozostać puste.");
-            }
-            else
+            try
             {
                 command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@imie", tB1.Text);
                 command.Parameters.AddWithValue("@nazwisko", tB2.Text);
-                command.Parameters.AddWithValue("@pesel",Convert.ToDecimal(tB3.Text));
+                command.Parameters.AddWithValue("@pesel", Convert.ToDecimal(tB3.Text));
                 command.Parameters.AddWithValue("@telefon", tB4.Text);
-                
-            }
-            try
-            {
+
                 command.ExecuteNonQuery();
                 wyslaneInfo("Dodano rekord do tabeli Wolontariusze.");
                 tB1.Text = "";
@@ -68,6 +61,29 @@ namespace Podbeskidzie
             catch (Exception exc)
             {
                 wyslaneInfo(exc.Message);
+            }
+        }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "")
+            {
+                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko, Pesel.");
+            }
+            else if (tB4.Text == "")
+            {
+                if (MessageBox.Show("Czy na pewno chcesz zostawić puste pola?", "Uwaga", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    Insert();
+                }
+                else
+                {
+                    wyslaneInfo("Anulowano dodawanie danych.");
+                }
+            }
+            else
+            {
+                Insert();                
             }
         }
     }

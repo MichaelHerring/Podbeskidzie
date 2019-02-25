@@ -40,13 +40,9 @@ namespace Podbeskidzie
             this.connection = connection;
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private void Insert() //metoda do dodawania danych
         {
-            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "" || tB4.Text == "")
-            {
-                wyslaneInfo("Wprowadź wszystkie dane, żadne pole nie może pozostać puste.");
-            }
-            else
+            try
             {
                 command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@nazwa", tB1.Text);
@@ -54,19 +50,39 @@ namespace Podbeskidzie
                 command.Parameters.AddWithValue("@email", tB3.Text);
                 command.Parameters.AddWithValue("@strona", tB4.Text);
 
-                try
+                command.ExecuteNonQuery();
+                wyslaneInfo("Dodano rekord do tabeli Redakcje.");
+                tB1.Text = "";
+                tB2.Text = "";
+                tB3.Text = "";
+                tB4.Text = "";
+            }
+            catch (Exception exc)
+            {
+                wyslaneInfo(exc.Message);
+            }
+        }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            if (tB1.Text == "")
+            {
+                wyslaneInfo("Wypełnij wymagane pola: Nazwa.");
+            }
+            else if (tB2.Text == "" || tB3.Text == "" || tB4.Text == "")
+            {
+                if (MessageBox.Show("Czy na pewno chcesz zostawić puste pola?", "Uwaga", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    command.ExecuteNonQuery();
-                    wyslaneInfo("Dodano rekord do tabeli Redakcje.");
-                    tB1.Text = "";
-                    tB2.Text = "";
-                    tB3.Text = "";
-                    tB4.Text = "";
+                    Insert();
                 }
-                catch (Exception exc)
+                else
                 {
-                    wyslaneInfo(exc.Message);
+                    wyslaneInfo("Anulowano dodawanie danych.");
                 }
+            }
+            else
+            {
+                Insert();
             }
         }
     }
