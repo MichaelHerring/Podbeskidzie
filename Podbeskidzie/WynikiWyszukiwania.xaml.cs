@@ -58,5 +58,23 @@ namespace Podbeskidzie
                 wyslaneInfo(exc.Message);
             }
         }
+
+        private void DataGr_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //otwarcie linku w przeglądarce
+            try
+            {
+                if (DataGr.CurrentCell.Column.Header.ToString() == "Strona")
+                {
+                    int i = DataGr.SelectedIndex;
+                    string link = table.Rows[i]["Strona"].ToString();
+                    System.Diagnostics.Process.Start("http://" + link);
+                }
+            }
+            catch (Exception exc)
+            {
+                wyslaneInfo(exc.Message);
+            }
+        }
     }
 }

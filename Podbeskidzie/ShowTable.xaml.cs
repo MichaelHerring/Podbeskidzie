@@ -49,18 +49,36 @@ namespace Podbeskidzie
         {
             query = $"select * from {tableName}";
             command = new SqlCommand(query, connection);
-                adapter = new SqlDataAdapter(command);
-                table = new DataTable();
+            adapter = new SqlDataAdapter(command);
+            table = new DataTable();
 
-                try
+            try
+            {
+                adapter.Fill(table);
+                DataGr.ItemsSource = table.DefaultView;
+            }
+            catch (Exception exc)
+            {
+                wyslaneInfo(exc.Message);
+            }           
+        }
+
+        private void DataGr_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //otwarcie linku w przeglądarce
+            try
+            {
+                if (DataGr.CurrentCell.Column.Header.ToString() == "Strona")
                 {
-                    adapter.Fill(table);
-                    DataGr.ItemsSource = table.DefaultView;
+                    int i = DataGr.SelectedIndex;
+                    string link = table.Rows[i]["Strona"].ToString();
+                    System.Diagnostics.Process.Start("http://" + link);
                 }
-                catch (Exception exc)
-                {
-                    wyslaneInfo(exc.Message);
-                }           
+            }
+            catch (Exception exc)
+            {
+                wyslaneInfo(exc.Message);
+            }
         }
     }
 }

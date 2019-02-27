@@ -22,7 +22,8 @@
     <Grid>
         <DataGrid x:Name="DataGr" 
                   RowBackground="White" 
-                  IsReadOnly="True" >
+                  IsReadOnly="True" 
+                  MouseDoubleClick="DataGr_MouseDoubleClick">
             <DataGrid.Background>
                 <SolidColorBrush Color="Black" Opacity="0.5"></SolidColorBrush>
             </DataGrid.Background>
