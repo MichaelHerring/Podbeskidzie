@@ -97,7 +97,7 @@
         <Label Grid.Column="0" 
                Grid.Row="3"
                FontSize="18"
-               Content="Pesel" />
+               Content="Email" />
         <Label Grid.Column="0" 
                Grid.Row="4"
                FontSize="18"

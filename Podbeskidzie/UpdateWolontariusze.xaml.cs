@@ -27,8 +27,8 @@ namespace Podbeskidzie
         string query = "select * from Wolontariusze where ID_Wolontariusza like @ID";
         string update = @"update Wolontariusze
                         set Imie = @imie, 
-                        Nazwisko = @nazwisko, 
-                        Pesel = @pesel, 
+                        Nazwisko = @nazwisko,
+                        Email = @email,
                         Telefon = @telefon
                         where ID_Wolontariusza = @ID";
 
@@ -63,15 +63,16 @@ namespace Podbeskidzie
                     reader.Read();
                     tB1.Text = reader.GetString(1);
                     tB2.Text = reader.GetString(2);
-                    tB3.Text = reader.GetDecimal(3).ToString();
-                    tB4.Text = reader.GetString(4);
-                    
+                    tB3.Text = reader.GetString(3);
+                    tB4.Text = reader.GetString(3);
+
                     reader.Close(); //zamknięcie readera
                     tB1.IsEnabled = true;
                     tB2.IsEnabled = true;
                     tB3.IsEnabled = true;
                     tB4.IsEnabled = true;
-                    
+
+
                 }
                 catch (Exception exc)
                 {
@@ -81,7 +82,8 @@ namespace Podbeskidzie
                     tB2.Text = "";
                     tB3.Text = "";
                     tB4.Text = "";
-      
+
+
                 }
                 finally
                 {
@@ -105,8 +107,9 @@ namespace Podbeskidzie
                 updatecomm.Parameters.AddWithValue("@ID", tB0.Text);
                 updatecomm.Parameters.AddWithValue("@imie", tB1.Text);
                 updatecomm.Parameters.AddWithValue("@nazwisko", tB2.Text);
-                updatecomm.Parameters.AddWithValue("@pesel", Convert.ToDecimal(tB3.Text));
+                updatecomm.Parameters.AddWithValue("@email", tB3.Text);
                 updatecomm.Parameters.AddWithValue("@telefon", tB4.Text);
+
 
 
                 if (tB0.Text != String.Empty)

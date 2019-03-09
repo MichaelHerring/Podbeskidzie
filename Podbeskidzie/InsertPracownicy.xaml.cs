@@ -22,7 +22,8 @@ namespace Podbeskidzie
     public partial class InsertPracownicy : Page
     {
         SqlConnection connection;
-        string query = "Insert into Pracownicy values(@Imie, @Nazwisko, @Pesel, @Telefon, @Email)";
+        string query = "Insert into Pracownicy values(@Imie, @Nazwisko," +
+            " @TelefonP, @Email, @Stanowisko, @Dział, @TelefonD)";
         SqlCommand command;
 
         public delegate void WyslijInfo(string komunikat);
@@ -47,9 +48,11 @@ namespace Podbeskidzie
                 command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Imie", tB1.Text);
                 command.Parameters.AddWithValue("@Nazwisko", tB2.Text);
-                command.Parameters.AddWithValue("@Pesel", Convert.ToDecimal(tB3.Text));
-                command.Parameters.AddWithValue("@Telefon", tB4.Text);
-                command.Parameters.AddWithValue("@Email", tB5.Text);
+                command.Parameters.AddWithValue("@TelefonP", tB3.Text);
+                command.Parameters.AddWithValue("@Email", tB4.Text);
+                command.Parameters.AddWithValue("@Stanowisko", tB5.Text);
+                command.Parameters.AddWithValue("@Dział", tB6.Text);
+                command.Parameters.AddWithValue("@TelefonD", tB7.Text);
 
                 command.ExecuteNonQuery();
                 wyslaneInfo("Dodano rekord do tabeli Pracownicy.");
@@ -58,6 +61,8 @@ namespace Podbeskidzie
                 tB3.Text = "";
                 tB4.Text = "";
                 tB5.Text = "";
+                tB6.Text = "";
+                tB7.Text = "";
             }
             catch (Exception exc)
             {

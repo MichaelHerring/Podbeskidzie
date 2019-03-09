@@ -23,7 +23,7 @@ namespace Podbeskidzie
     {
         SqlConnection connection;
 
-        string query = "Insert into Wolontariusze values(@imie, @nazwisko, @pesel, @telefon)";
+        string query = "Insert into Wolontariusze values(@imie, @nazwisko,@email,@telefon)";
         SqlCommand command;
 
         public delegate void WyslijInfo(string komunikat);
@@ -47,8 +47,9 @@ namespace Podbeskidzie
                 command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@imie", tB1.Text);
                 command.Parameters.AddWithValue("@nazwisko", tB2.Text);
-                command.Parameters.AddWithValue("@pesel", Convert.ToDecimal(tB3.Text));
+                command.Parameters.AddWithValue("@email", tB3.Text);
                 command.Parameters.AddWithValue("@telefon", tB4.Text);
+
 
                 command.ExecuteNonQuery();
                 wyslaneInfo("Dodano rekord do tabeli Wolontariusze.");
@@ -56,6 +57,7 @@ namespace Podbeskidzie
                 tB2.Text = "";
                 tB3.Text = "";
                 tB4.Text = "";
+
 
             }
             catch (Exception exc)
@@ -66,11 +68,11 @@ namespace Podbeskidzie
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "")
+            if (tB1.Text == "" || tB2.Text == "")
             {
-                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko, Pesel.");
+                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko");
             }
-            else if (tB4.Text == "")
+            else if (tB3.Text == "" || tB4.Text== "")
             {
                 if (MessageBox.Show("Czy na pewno chcesz zostawić puste pola?", "Uwaga", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {

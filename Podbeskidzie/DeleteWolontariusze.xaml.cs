@@ -54,7 +54,7 @@ namespace Podbeskidzie
                     reader.Read();
                     tB1.Text = reader.GetString(1);
                     tB2.Text = reader.GetString(2);
-                    tB3.Text = reader.GetDecimal(3).ToString();
+                    tB3.Text = reader.GetString(3);
                     tB4.Text = reader.GetString(4);
                     reader.Close();
                 }
@@ -67,6 +67,7 @@ namespace Podbeskidzie
                     tB2.Text = "";
                     tB3.Text = "";
                     tB4.Text = "";
+
 
 
                 }
@@ -102,7 +103,8 @@ namespace Podbeskidzie
                     tB2.Text = "";
                     tB3.Text = "";
                     tB4.Text = "";
-                  
+
+
 
                     if (i != 0)
                     {
