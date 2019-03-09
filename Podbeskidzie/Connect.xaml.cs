@@ -33,11 +33,14 @@ namespace Podbeskidzie
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            MainGrid.Background = Brushes.Black;
+            backgroundVideo.Opacity = 0;
             DoubleAnimation FadeIn = new DoubleAnimation();
             FadeIn.From = 0;
             FadeIn.To = 1;
-            FadeIn.Duration = TimeSpan.FromSeconds(0.8);
-            MainGrid.BeginAnimation(OpacityProperty, FadeIn);
+            FadeIn.BeginTime = TimeSpan.FromSeconds(0.3);
+            FadeIn.Duration = TimeSpan.FromSeconds(3.8);
+            backgroundVideo.BeginAnimation(OpacityProperty, FadeIn);
 
             HintLogin.Width = 0;
             HintHaslo.Width = 0;

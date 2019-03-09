@@ -58,6 +58,9 @@
     <Compile Include="Connect.xaml.cs">
       <DependentUpon>Connect.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeleteDzialy.xaml.cs">
+      <DependentUpon>DeleteDzialy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DeleteDziennikarze.xaml.cs">
       <DependentUpon>DeleteDziennikarze.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,9 @@
     </Compile>
     <Compile Include="DeleteWolontariusze.xaml.cs">
       <DependentUpon>DeleteWolontariusze.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InsertDzialy.xaml.cs">
+      <DependentUpon>InsertDzialy.xaml</DependentUpon>
     </Compile>
     <Compile Include="InsertDziennikarze.xaml.cs">
       <DependentUpon>InsertDziennikarze.xaml</DependentUpon>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="ShowTable.xaml.cs">
       <DependentUpon>ShowTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDzialy.xaml.cs">
+      <DependentUpon>UpdateDzialy.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdateDziennikarze.xaml.cs">
       <DependentUpon>UpdateDziennikarze.xaml</DependentUpon>
@@ -104,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="DeleteDzialy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DeleteDziennikarze.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeleteWolontariusze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsertDzialy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +168,10 @@
     <Page Include="ShowTable.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UpdateDzialy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpdateDziennikarze.xaml">
       <SubType>Designer</SubType>
@@ -208,7 +229,6 @@
     <Resource Include="Resources\bulb.png" />
     <Resource Include="Resources\password.png" />
     <Resource Include="Resources\search.png" />
-    <Resource Include="Resources\smietnik.png" />
     <Resource Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
@@ -221,21 +241,13 @@
     <Resource Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\12.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\minimize.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Podbeskidzie.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\iconClose.png" />
     <Resource Include="Resources\iconMaximize.png" />
     <Resource Include="Resources\iconMinimize.png" />
+    <Resource Include="Resources\close.png" />
     <Content Include="Resources\Oficjalnie.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

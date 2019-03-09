@@ -36,6 +36,28 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="CloseButton" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Red"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid Background="Transparent">
+                                <ContentPresenter></ContentPresenter>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Image Source="Resources/2.jpeg" Stretch="UniformToFill" >
@@ -43,26 +65,42 @@
                 <BlurEffect Radius="1"/>
             </Image.Effect>
         </Image>
-        
+
         <!--Górny pasek-->
         <DockPanel x:Name="WindowBar" MouseLeftButtonDown="WindowBar_MouseLeftButtonDown" Background="#0d1a30" Height="25" VerticalAlignment="Top" LastChildFill="False">
-            <Button Name="ZamknijButton" Click="ZamknijButton_Click" DockPanel.Dock="Right" Width="35"  BorderThickness="0" Background="Transparent">
-                <StackPanel>
-                    <Image Source="Resources/iconClose.png" Height="16" Width="16"/>
-                </StackPanel>
+            <Button Name="ZamknijButton" Style="{DynamicResource CloseButton}" Click="ZamknijButton_Click" DockPanel.Dock="Right" Width="45"  BorderThickness="0" Background="Transparent">
+                <Grid Height="25" Width="45">
+                    <Rectangle Width="16" Height="1" Fill="White" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="45"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Width="16" Height="1" Fill="White" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="-45"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                </Grid>
             </Button>
-            <Button Name="MaxBtn" DockPanel.Dock="Right" Width="35" BorderThickness="0" Background="Transparent" Click="MaxBtn_Click">
-                <StackPanel>
-                    <Image Source="Resources/iconMaximize.png" Height="16" Width="16"/>
-                </StackPanel>
+            <Button Name="MaxBtn" DockPanel.Dock="Right" Width="45" BorderThickness="0" Background="Transparent" Click="MaxBtn_Click">
+                <Grid Width="12" Height="12">
+                    <Rectangle Width="1" Height="12" Fill="White" HorizontalAlignment="Right"></Rectangle>
+                    <Rectangle Width="1" Height="12" Fill="White" HorizontalAlignment="Left"></Rectangle>
+                    <Rectangle Width="14" Height="1" Fill="White" VerticalAlignment="Top"></Rectangle>
+                    <Rectangle Width="14" Height="1" Fill="White" VerticalAlignment="Bottom"></Rectangle>
+                </Grid>
             </Button>
-            <Button Name="MiniBtn" Click="MiniBtn_Click" DockPanel.Dock="Right" Width="35" BorderThickness="0" Background="Transparent">
-                <StackPanel>
-                    <Image Source="Resources/iconMinimize.png" Height="16" Width="16"/>
-                </StackPanel>
+            <Button Name="MiniBtn" Click="MiniBtn_Click" DockPanel.Dock="Right" Width="45" BorderThickness="0" Background="Transparent">
+                <Grid Height="12">
+                    <Rectangle Fill="White" Width="14" Height="1" VerticalAlignment="Bottom"></Rectangle>
+                </Grid>
             </Button>
         </DockPanel>
-        
+
         <!--Menu-->
         <DockPanel x:Name="Navigation" 
                    HorizontalAlignment="Stretch"  
@@ -131,6 +169,7 @@
                         <ComboBoxItem>Redakcje</ComboBoxItem>
                         <ComboBoxItem>Wolontariusze</ComboBoxItem>
                         <ComboBoxItem>Pracownicy</ComboBoxItem>
+                        <ComboBoxItem>Dzialy</ComboBoxItem>
                     </ComboBox>
                     <Label Content="Kolumna:" Foreground="White" Padding="8 6" Margin="0,5,0,0"/>
                     <ComboBox x:Name="ComboBoxKolumna" Height="24" Width="100">
@@ -146,42 +185,12 @@
                         <Image Source="Resources/search.png" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                     </Button>
                 </DockPanel>
-                <!--Button x:Name="Hamburger" 
-                        Width="36" 
-                        Height="30"
-                        HorizontalAlignment="Right" 
-                        VerticalAlignment="Center" 
-                        BorderThickness="0">
-                    <Grid>
-                        <Rectangle Fill="White" 
-                           Width="22"
-                           Height="3" 
-                           VerticalAlignment="Center" 
-                           HorizontalAlignment="Center" 
-                           RadiusY="1" 
-                           RadiusX="1"/>
-                        <Rectangle Fill="White" 
-                           Width="22"
-                           Height="3" 
-                           VerticalAlignment="Center" 
-                           HorizontalAlignment="Center" 
-                           RadiusY="1" 
-                           RadiusX="1" Margin="0,-6,0,6"/>
-                        <Rectangle Fill="White" 
-                           Width="22"
-                           Height="3" 
-                           VerticalAlignment="Center" 
-                           HorizontalAlignment="Center" 
-                           RadiusY="1" 
-                           RadiusX="1" Margin="0,6,0,-6"/>
-                    </Grid>
-                </-->
             </Grid>
         </DockPanel>
 
         <!--Listy rozwijane-->
         <StackPanel x:Name="StackPanel1"
-                    Height="124" 
+                    Height="154" 
                     VerticalAlignment="Top" 
                     Margin="0,61,0,0" 
                     HorizontalAlignment="Left" 
@@ -207,11 +216,16 @@
             <Button x:Name="btnDodaj4" 
                     Content="Pracownicy" 
                     Height="30"
-                    BorderThickness="0"
+                    BorderThickness="0 0 0 1"
                     Click="btnDodaj4_Click"/>
+            <Button x:Name="btnDodaj5" 
+                    Content="Działy" 
+                    Height="30"
+                    BorderThickness="0"
+                    Click="btnDodaj5_Click"/>
         </StackPanel>
         <StackPanel x:Name="StackPanel2"
-                    Height="124" 
+                    Height="154" 
                     VerticalAlignment="Top" 
                     Margin="120,61,0,0" 
                     HorizontalAlignment="Left" 
@@ -238,11 +252,16 @@
             <Button x:Name="btnUsun4" 
                     Content="Pracownicy" 
                     Height="30"
-                    BorderThickness="0"
+                    BorderThickness="0 0 0 1"
                     Click="btnUsun4_Click"/>
+            <Button x:Name="btnUsun5" 
+                    Content="Działy" 
+                    Height="30"
+                    BorderThickness="0"
+                    Click="btnUsun5_Click"/>
         </StackPanel>
         <StackPanel x:Name="StackPanel3"
-                    Height="124" 
+                    Height="154" 
                     VerticalAlignment="Top" 
                     Margin="240,61,0,0" 
                     HorizontalAlignment="Left" 
@@ -269,11 +288,16 @@
             <Button x:Name="btnAktualizuj4" 
                     Content="Pracownicy" 
                     Height="30"
-                    BorderThickness="0"
+                    BorderThickness="0 0 0 1"
                     Click="btnAktualizuj4_Click"/>
+            <Button x:Name="btnAktualizuj5" 
+                    Content="Działy" 
+                    Height="30"
+                    BorderThickness="0"
+                    Click="btnAktualizuj5_Click"/>
         </StackPanel>
         <StackPanel x:Name="StackPanel4"
-                    Height="124" 
+                    Height="154" 
                     VerticalAlignment="Top" 
                     Margin="360,61,0,0" 
                     HorizontalAlignment="Left" 
@@ -300,8 +324,13 @@
             <Button x:Name="btnWyswietl4" 
                     Content="Pracownicy" 
                     Height="30"
-                    BorderThickness="0"
+                    BorderThickness="0 0 0 1"
                     Click="btnWyswietl4_Click"/>
+            <Button x:Name="btnWyswietl5" 
+                    Content="Działy" 
+                    Height="30"
+                    BorderThickness="0"
+                    Click="btnWyswietl5_Click"/>
         </StackPanel>
 
         <!--Frames, Search Panel, Message panel-->
@@ -373,6 +402,6 @@
                        Background="Transparent" 
                        Opacity="0.85"/>
         </Grid>
-        
+
     </Grid>
 </Window>

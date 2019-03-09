@@ -51,7 +51,7 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="MainGrid">
-        <MediaElement Source="Resources/Oficjalnie.mp4" Stretch="UniformToFill" Margin="-95,-9,0,0">
+        <MediaElement Name="backgroundVideo" Source="Resources/Oficjalnie.mp4" Stretch="UniformToFill" Margin="-95,-9,0,0">
             <!--<Image.Effect>
                 <BlurEffect Radius="10"/>
             </Image.Effect>-->
@@ -108,7 +108,7 @@
             <Button x:Name="btn1"
                     Style="{DynamicResource RoundedButtonStyle}"
                     Content="Zaloguj"
-                    Width="225"
+                    Width="224"
                     Height="32"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"

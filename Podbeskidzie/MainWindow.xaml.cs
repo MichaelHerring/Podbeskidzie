@@ -40,14 +40,17 @@ namespace Podbeskidzie
             InsertRedakcje.wyslaneInfo += WyswietlKomunikat;
             InsertPracownicy.wyslaneInfo += WyswietlKomunikat;
             InsertWolontariusze.wyslaneInfo += WyswietlKomunikat;
+            InsertDzialy.wyslaneInfo += WyswietlKomunikat;
             DeleteDziennikarze.wyslaneInfo += WyswietlKomunikat;
             DeleteRedakcje.wyslaneInfo += WyswietlKomunikat;
             DeletePracownicy.wyslaneInfo += WyswietlKomunikat;
             DeleteWolontariusze.wyslaneInfo += WyswietlKomunikat;
+            DeleteDzialy.wyslaneInfo += WyswietlKomunikat;
             UpdateDziennikarze.wyslaneInfo += WyswietlKomunikat;
             UpdateRedakcje.wyslaneInfo += WyswietlKomunikat;
             UpdatePracownicy.wyslaneInfo += WyswietlKomunikat;
             UpdateWolontariusze.wyslaneInfo += WyswietlKomunikat;
+            UpdateDzialy.wyslaneInfo += WyswietlKomunikat;
             ShowTable.wyslaneInfo += WyswietlKomunikat;
             WynikiWyszukiwania.wyslaneInfo += WyswietlKomunikat;
         }
@@ -239,6 +242,12 @@ namespace Podbeskidzie
             StackPanel1.Visibility = Visibility.Hidden;
         }
 
+        private void btnDodaj5_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Content = new InsertDzialy(connection);
+            StackPanel1.Visibility = Visibility.Hidden;
+        }
+
         //Lista rozwijana Usuwanie
         private void btnUsun1_Click(object sender, RoutedEventArgs e)
         {
@@ -261,6 +270,12 @@ namespace Podbeskidzie
         private void btnUsun4_Click(object sender, RoutedEventArgs e)
         {
             Container.Content = new DeletePracownicy(connection);
+            StackPanel2.Visibility = Visibility.Hidden;
+        }
+
+        private void btnUsun5_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Content = new DeleteDzialy(connection);
             StackPanel2.Visibility = Visibility.Hidden;
         }
 
@@ -289,6 +304,12 @@ namespace Podbeskidzie
             StackPanel3.Visibility = Visibility.Hidden;
         }
 
+        private void btnAktualizuj5_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Content = new UpdateDzialy(connection);
+            StackPanel3.Visibility = Visibility.Hidden;
+        }
+
         //Lista rozwijana wyświetlanie
         private void btnWyswietl1_Click(object sender, RoutedEventArgs e)
         {
@@ -311,6 +332,12 @@ namespace Podbeskidzie
         private void btnWyswietl4_Click(object sender, RoutedEventArgs e)
         {
             Container2.Content = new ShowTable(connection, "Pracownicy");
+            StackPanel4.Visibility = Visibility.Hidden;
+        }
+
+        private void btnWyswietl5_Click(object sender, RoutedEventArgs e)
+        {
+            Container2.Content = new ShowTable(connection, "Dzialy");
             StackPanel4.Visibility = Visibility.Hidden;
         }
 
@@ -355,7 +382,7 @@ namespace Podbeskidzie
                 }
                 else
                 {
-                    string query = $"select * from {tabela} where {kolumna} like '{wartosc}'";
+                    string query = $"select * from {tabela} where {kolumna} like '%{wartosc}%'";
                     Container2.Content = new WynikiWyszukiwania(query, connection);
                 }
             }
