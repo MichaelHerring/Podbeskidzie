@@ -21,13 +21,15 @@
         </Style>
     </Page.Resources>
     <Grid>
-        <DataGrid x:Name="DataGr" 
-                  RowBackground="White" 
+        <DataGrid x:Name="DataGr"  
                   IsReadOnly="True" 
                   MouseDoubleClick="DataGr_MouseDoubleClick">
             <DataGrid.Background>
                 <SolidColorBrush Color="Black" Opacity="0.5"></SolidColorBrush>
             </DataGrid.Background>
+            <DataGrid.RowBackground>
+                <SolidColorBrush Color="White" Opacity=".85" />
+            </DataGrid.RowBackground>
         </DataGrid>
     </Grid>
 </Page>
