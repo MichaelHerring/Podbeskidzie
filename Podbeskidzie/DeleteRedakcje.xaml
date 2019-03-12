@@ -33,6 +33,7 @@
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="8 5 8 5"/>
         </Style>
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
@@ -111,7 +112,7 @@
                  Grid.Column="1"
                  Grid.Row="0"
                  FontSize="18"
-                 Margin="16 5 116 5"
+                 Margin="8 5 108 5"
                  Padding="2"
                  TextChanged="tB0_TextChanged"
                  />
@@ -138,28 +139,24 @@
                  Grid.Column="1"
                  Grid.Row="1"
                  FontSize="18"
-                 Margin="16 5 16 5" 
                  Padding="2"
                  IsEnabled="False"/>
         <TextBox x:Name="tB2" 
                  Grid.Column="1"
                  Grid.Row="2"
                  FontSize="18"
-                 Margin="16 5 16 5"
                  Padding="2"
                  IsEnabled="False"/>
         <TextBox x:Name="tB3" 
                  Grid.Column="1"
                  Grid.Row="3"
                  FontSize="18"
-                 Margin="16 5 16 5"
                  Padding="2"
                  IsEnabled="False"/>
         <TextBox x:Name="tB4" 
                  Grid.Column="1"
                  Grid.Row="4"
                  FontSize="18"
-                 Margin="16 5 16 5"
                  Padding="2"
                  IsEnabled="False"/>
         <Button x:Name="btn2"

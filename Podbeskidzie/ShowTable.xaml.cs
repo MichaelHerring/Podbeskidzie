@@ -47,7 +47,20 @@ namespace Podbeskidzie
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            query = $"select * from {tableName}";
+            if (tableName == "Dziennikarze")
+            {
+                query = @"select d.ID_Dziennikarza as 'ID Dziennikarza', d.Imie, d.Nazwisko, d.ID_Redakcji as 'ID Redakcji', r.Nazwa as 'Nazwa Redakcji', d.Rodzaj, d.Telefon, d.Email
+                        from Dziennikarze d join Redakcje r on d.ID_Redakcji = r.ID_Redakcji";
+            }
+            else if (tableName == "Pracownicy")
+            {
+                query = @"select p.ID_Pracownika as 'ID Pracownika', p.Imie, p.Nazwisko, p.Telefon_Pracownika as 'Telefon Pracownika', p.Email_Pracownika as 'Email Pracownika', p.Stanowisko, p.ID_Dzialu as 'ID Dzialu', d.Nazwa_Dzialu as 'Nazwa Dzialu'
+                        from Pracownicy p join Dzialy d on p.ID_Dzialu = d.ID_Dzialu";
+            }
+            else
+            {
+                query = $"select * from {tableName}";
+            }
             command = new SqlCommand(query, connection);
             adapter = new SqlDataAdapter(command);
             table = new DataTable();

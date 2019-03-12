@@ -23,7 +23,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style TargetType="StackPanel">
+        <!--Style TargetType="StackPanel">
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect 
@@ -35,7 +35,7 @@
                     </DropShadowEffect>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </-->
         <Style x:Key="CloseButton" TargetType="{x:Type Button}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -197,6 +197,15 @@
                     Width="120"
                     Visibility="Hidden"
                     Panel.ZIndex="100" >
+            <StackPanel.Effect>
+                <DropShadowEffect 
+                        ShadowDepth="4"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.5"
+                        BlurRadius="4">
+                </DropShadowEffect>
+            </StackPanel.Effect>
             <Rectangle x:Name="Rectangle1" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnDodaj1" 
                     Content="Dziennikarze" 
@@ -233,6 +242,15 @@
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
+            <StackPanel.Effect>
+                <DropShadowEffect 
+                        ShadowDepth="4"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.5"
+                        BlurRadius="4">
+                </DropShadowEffect>
+            </StackPanel.Effect>
             <Rectangle x:Name="Rectangle2" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnUsun1" 
                     Content="Dziennikarze" 
@@ -269,6 +287,15 @@
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
+            <StackPanel.Effect>
+                <DropShadowEffect 
+                        ShadowDepth="4"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.5"
+                        BlurRadius="4">
+                </DropShadowEffect>
+            </StackPanel.Effect>
             <Rectangle x:Name="Rectangle3" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnAktualizuj1" 
                     Content="Dziennikarze" 
@@ -305,6 +332,15 @@
                     Visibility="Hidden"
                     Panel.ZIndex="100"
                     >
+            <StackPanel.Effect>
+                <DropShadowEffect 
+                        ShadowDepth="4"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.5"
+                        BlurRadius="4">
+                </DropShadowEffect>
+            </StackPanel.Effect>
             <Rectangle x:Name="Rectangle4" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
             <Button x:Name="btnWyswietl1" 
                     Content="Dziennikarze" 

@@ -26,6 +26,8 @@ namespace Podbeskidzie
         SqlConnection connection;
         DoubleAnimation BorderAnimation1;
         DoubleAnimation BorderAnimation2;
+        DoubleAnimation DropDownAnimation;
+        DoubleAnimation DropDownOpacityAnimation;
 
         public MainWindow()
         {
@@ -108,6 +110,18 @@ namespace Podbeskidzie
             BorderAnimation2.From = 116;
             BorderAnimation2.To = 104;
             BorderAnimation2.Duration = TimeSpan.FromSeconds(0.25);
+
+            DropDownAnimation = new DoubleAnimation();
+            DropDownAnimation.From = 0;
+            DropDownAnimation.To = 154;
+            DropDownAnimation.EasingFunction = new CubicEase();
+            DropDownAnimation.Duration = TimeSpan.FromSeconds(0.2);
+
+            DropDownOpacityAnimation = new DoubleAnimation();
+            DropDownOpacityAnimation.From = 0;
+            DropDownOpacityAnimation.To = 1;
+            DropDownOpacityAnimation.EasingFunction = new CubicEase();
+            DropDownOpacityAnimation.Duration = TimeSpan.FromSeconds(0.2);
         }
 
         //Główne przyciski Menu
@@ -162,6 +176,12 @@ namespace Podbeskidzie
         //MouseEnter
         private void btn1_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (StackPanel1.Visibility == Visibility.Hidden)
+            {
+                StackPanel1.BeginAnimation(HeightProperty, DropDownAnimation);
+                StackPanel1.BeginAnimation(OpacityProperty, DropDownOpacityAnimation);
+                StackPanel1.Effect.BeginAnimation(OpacityProperty, DropDownOpacityAnimation);
+            }
             StackPanel1.Visibility = Visibility.Visible;
             StackPanel2.Visibility = Visibility.Hidden;
             StackPanel3.Visibility = Visibility.Hidden;
@@ -171,6 +191,12 @@ namespace Podbeskidzie
 
         private void btn2_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (StackPanel2.Visibility == Visibility.Hidden)
+            {
+                StackPanel2.BeginAnimation(HeightProperty, DropDownAnimation);
+                StackPanel2.BeginAnimation(OpacityProperty, DropDownOpacityAnimation);
+                StackPanel2.Effect.BeginAnimation(OpacityProperty, DropDownOpacityAnimation);
+            }
             StackPanel1.Visibility = Visibility.Hidden;
             StackPanel2.Visibility = Visibility.Visible;
             StackPanel3.Visibility = Visibility.Hidden;
@@ -180,6 +206,12 @@ namespace Podbeskidzie
 
         private void btn3_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (StackPanel3.Visibility == Visibility.Hidden)
+            {
+                StackPanel3.BeginAnimation(HeightProperty, DropDownAnimation);
+                StackPanel3.BeginAnimation(OpacityProperty, DropDownOpacityAnimation);
+                StackPanel3.Effect.BeginAnimation(OpacityProperty, DropDownOpacityAnimation);
+            }
             StackPanel1.Visibility = Visibility.Hidden;
             StackPanel2.Visibility = Visibility.Hidden;
             StackPanel3.Visibility = Visibility.Visible;
@@ -189,6 +221,12 @@ namespace Podbeskidzie
 
         private void btn4_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (StackPanel4.Visibility == Visibility.Hidden)
+            {
+                StackPanel4.BeginAnimation(HeightProperty, DropDownAnimation);
+                StackPanel4.BeginAnimation(OpacityProperty, DropDownOpacityAnimation);
+                StackPanel4.Effect.BeginAnimation(OpacityProperty, DropDownOpacityAnimation);
+            }
             StackPanel1.Visibility = Visibility.Hidden;
             StackPanel2.Visibility = Visibility.Hidden;
             StackPanel3.Visibility = Visibility.Hidden;
@@ -382,7 +420,23 @@ namespace Podbeskidzie
                 }
                 else
                 {
-                    string query = $"select * from {tabela} where {kolumna} like '%{wartosc}%'";
+                    string query;
+                    if (tabela == "Dziennikarze")
+                    {
+                        query = $@"select d.ID_Dziennikarza as 'ID Dziennikarza', d.Imie, d.Nazwisko, d.ID_Redakcji as 'ID Redakcji', r.Nazwa as 'Nazwa Redakcji', d.Rodzaj, d.Telefon, d.Email
+                        from Dziennikarze d join Redakcje r on d.ID_Redakcji = r.ID_Redakcji
+                        where d.{kolumna} like '%{wartosc}%'";
+                    }
+                    else if (tabela == "Pracownicy")
+                    {
+                        query = $@"select p.ID_Pracownika as 'ID Pracownika', p.Imie, p.Nazwisko, p.Telefon_Pracownika as 'Telefon Pracownika', p.Email_Pracownika as 'Email Pracownika', p.Stanowisko, p.ID_Dzialu as 'ID Dzialu', d.Nazwa_Dzialu as 'Nazwa Dzialu'
+                        from Pracownicy p join Dzialy d on p.ID_Dzialu = d.ID_Dzialu
+                        where p.{kolumna} like '%{wartosc}%'";
+                    }
+                    else
+                    {
+                        query = $"select * from {tabela} where {kolumna} like '%{wartosc}%'";
+                    }
                     Container2.Content = new WynikiWyszukiwania(query, connection);
                 }
             }

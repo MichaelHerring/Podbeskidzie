@@ -28,7 +28,7 @@
                 <SolidColorBrush Color="Black" Opacity="0.5"></SolidColorBrush>
             </DataGrid.Background>
             <DataGrid.RowBackground>
-                <SolidColorBrush Color="White" Opacity=".85" />
+                <SolidColorBrush Color="White" Opacity="0.85" />
             </DataGrid.RowBackground>
         </DataGrid>
     </Grid>
