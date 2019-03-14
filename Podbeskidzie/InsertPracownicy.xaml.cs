@@ -23,8 +23,10 @@ namespace Podbeskidzie
     {
         SqlConnection connection;
         string query = "Insert into Pracownicy values(@Imie, @Nazwisko," +
-            " @TelefonP, @Email, @Stanowisko, @Dział, @TelefonD)";
-        SqlCommand command;
+            " @Telefon_Pracownika, @Email_Pracownika, @Stanowisko, @ID_Dzialu)";
+        string loadquery = "select ID_Dzialu, Nazwa_Dzialu from Dzialy order by ID_Dzialu";
+        SqlCommand command,command1;
+        SqlDataReader reader;
 
         public delegate void WyslijInfo(string komunikat);
         public static event WyslijInfo wyslaneInfo;
@@ -41,18 +43,30 @@ namespace Podbeskidzie
             this.connection = connection;
         }
 
+
         private void Insert() //metoda do dodawania danych
         {
-            try
-            {
+            try {
+                string trimmed = tB6.Text;
+
+                for(int i=0;i<tB6.Text.Length;i++)
+                {
+                    if(tB6.Text[i]==' ')
+                    {
+                        trimmed = tB6.Text.Remove(i);
+                        break;
+                    }
+                }
+
+            
                 command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Imie", tB1.Text);
                 command.Parameters.AddWithValue("@Nazwisko", tB2.Text);
-                command.Parameters.AddWithValue("@TelefonP", tB3.Text);
-                command.Parameters.AddWithValue("@Email", tB4.Text);
+                command.Parameters.AddWithValue("@Telefon_Pracownika", tB3.Text);
+                command.Parameters.AddWithValue("@Email_Pracownika", tB4.Text);
                 command.Parameters.AddWithValue("@Stanowisko", tB5.Text);
-                command.Parameters.AddWithValue("@Dział", tB6.Text);
-                command.Parameters.AddWithValue("@TelefonD", tB7.Text);
+                command.Parameters.AddWithValue("@ID_Dzialu", Convert.ToInt16(trimmed));
+                
 
                 command.ExecuteNonQuery();
                 wyslaneInfo("Dodano rekord do tabeli Pracownicy.");
@@ -62,11 +76,35 @@ namespace Podbeskidzie
                 tB4.Text = "";
                 tB5.Text = "";
                 tB6.Text = "";
-                tB7.Text = "";
+                
             }
             catch (Exception exc)
             {
                 wyslaneInfo(exc.Message);
+            }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                command1 = new SqlCommand(loadquery, connection);
+                reader=command1.ExecuteReader();
+                
+                while(reader.Read())
+                {
+                    tB6.Items.Add(reader.GetInt16(0) + $" ({reader.GetString(1)})");
+                }
+                reader.Close();
+
+            }
+            catch(Exception exc)
+            {
+                wyslaneInfo(exc.Message);
+            }
+            finally
+            {
+                reader.Close();
             }
         }
 
