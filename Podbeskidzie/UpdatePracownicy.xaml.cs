@@ -136,7 +136,11 @@ namespace Podbeskidzie
             }
         }
 
-      
+        private void tB0_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                btn1_Click(this, new RoutedEventArgs());
+        }
 
         private void tB0_TextChanged(object sender, TextChangedEventArgs e)
         {

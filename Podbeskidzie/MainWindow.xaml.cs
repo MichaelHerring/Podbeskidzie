@@ -28,6 +28,7 @@ namespace Podbeskidzie
         DoubleAnimation BorderAnimation2;
         DoubleAnimation DropDownAnimation;
         DoubleAnimation DropDownOpacityAnimation;
+        string currentTable = "";
 
         public MainWindow()
         {
@@ -61,6 +62,22 @@ namespace Podbeskidzie
         {
             MessageViewer.Content += komunikat + "\n";
             MessageViewer.ScrollToEnd();
+
+            //Odświeżenie wyświetlanej tabeli
+
+            if (komunikat.Contains("Dodano rekord") || komunikat.Contains("Usunięto rekord") || komunikat.Contains("Zaktualizowano rekord"))
+            {
+                if (komunikat.Contains("Dziennikarze") && currentTable == "Dziennikarze")
+                    btnWyswietl1_Click(this, new RoutedEventArgs());
+                else if (komunikat.Contains("Redakcje") && currentTable == "Redakcje")
+                    btnWyswietl2_Click(this, new RoutedEventArgs());
+                else if (komunikat.Contains("Wolontariusze") && currentTable == "Wolontariusze")
+                    btnWyswietl3_Click(this, new RoutedEventArgs());
+                else if (komunikat.Contains("Pracownicy") && currentTable == "Pracownicy")
+                    btnWyswietl4_Click(this, new RoutedEventArgs());
+                else if (komunikat.Contains("Działy") && currentTable == "Działy")
+                    btnWyswietl5_Click(this, new RoutedEventArgs());
+            }
 
             //animacja żarówki
             DoubleAnimation FadeOut = new DoubleAnimation();
@@ -353,30 +370,35 @@ namespace Podbeskidzie
         {
             Container2.Content = new ShowTable(connection, "Dziennikarze");
             StackPanel4.Visibility = Visibility.Hidden;
+            currentTable = "Dziennikarze";
         }
 
         private void btnWyswietl2_Click(object sender, RoutedEventArgs e)
         {
             Container2.Content = new ShowTable(connection, "Redakcje");
             StackPanel4.Visibility = Visibility.Hidden;
+            currentTable = "Redakcje";
         }
 
         private void btnWyswietl3_Click(object sender, RoutedEventArgs e)
         {
             Container2.Content = new ShowTable(connection, "Wolontariusze");
             StackPanel4.Visibility = Visibility.Hidden;
+            currentTable = "Wolontariusze";
         }
 
         private void btnWyswietl4_Click(object sender, RoutedEventArgs e)
         {
             Container2.Content = new ShowTable(connection, "Pracownicy");
             StackPanel4.Visibility = Visibility.Hidden;
+            currentTable = "Pracownicy";
         }
 
         private void btnWyswietl5_Click(object sender, RoutedEventArgs e)
         {
             Container2.Content = new ShowTable(connection, "Dzialy");
             StackPanel4.Visibility = Visibility.Hidden;
+            currentTable = "Działy";
         }
 
         //Wyszukiwanie

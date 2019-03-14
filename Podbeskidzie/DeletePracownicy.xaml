@@ -127,6 +127,7 @@
                  Margin="8 5 108 5"
                  Padding="2"
                  TextChanged="tB0_TextChanged"
+                 KeyDown="tB0_KeyDown"
                  />
         <Button x:Name="btn1"
                 Style="{DynamicResource RoundedButtonStyle}"

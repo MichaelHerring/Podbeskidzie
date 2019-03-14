@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -248,6 +251,8 @@
     <Resource Include="Resources\iconMaximize.png" />
     <Resource Include="Resources\iconMinimize.png" />
     <Resource Include="Resources\close.png" />
+    <Resource Include="Resources\icon.ico" />
+    <Resource Include="icon.ico" />
     <Content Include="Resources\Oficjalnie.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
