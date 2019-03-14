@@ -10,11 +10,13 @@
 
     <Page.Resources>
         <Style TargetType="{x:Type DataGridCell}">
+            <Setter Property="FontSize" Value="14"/>
             <Style.Triggers>
                 <Trigger Property="DataGridCell.IsSelected" Value="True">
                     <Setter Property="Background" Value="#f55449" />
-                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="Foreground" Value="White" />
                     <Setter Property="BorderBrush" Value="#f55449" />
+                    <Setter Property="FontWeight" Value="Bold"/>
                 </Trigger>
             </Style.Triggers>
         </Style>

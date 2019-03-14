@@ -98,7 +98,7 @@
         <Label Grid.Column="0" 
                Grid.Row="3"
                FontSize="18"
-               Content="Redakcja" />
+               Content="ID Redakcji" />
         <Label Grid.Column="0" 
                Grid.Row="4"
                FontSize="18"

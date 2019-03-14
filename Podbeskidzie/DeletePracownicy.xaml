@@ -187,7 +187,7 @@
         <Button x:Name="btn2"
                 Style="{DynamicResource RoundedButtonStyle}"
                 Content="Usuń" 
-                Grid.Row="8" 
+                Grid.Row="7" 
                 Grid.Column="1" 
                 HorizontalAlignment="Center"
                 Margin="0 4 0 0"

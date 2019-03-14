@@ -23,7 +23,7 @@ namespace Podbeskidzie
     public partial class UpdatePracownicy : Page
     {
         SqlConnection connection;
-        SqlCommand command, updatecomm,command1;
+        SqlCommand command, updatecomm;
 
         
 
