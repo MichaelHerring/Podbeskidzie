@@ -78,6 +78,7 @@ namespace Podbeskidzie
             try
             {
                 string trimmedID = tB3.Text;
+                string email = tB6.Text;
                 for (int i = 0; i < tB3.Text.Length - 1; i++) //usuwanie nazwy redakcji, aby w poleceniu zostało tylko ID
                 {
                     if (tB3.Text[i] == ' ')
@@ -86,22 +87,30 @@ namespace Podbeskidzie
                         break;
                     }
                 }
-                command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@imie", tB1.Text);
-                command.Parameters.AddWithValue("@nazwisko", tB2.Text);
-                command.Parameters.AddWithValue("@redakcja", trimmedID);
-                command.Parameters.AddWithValue("@rodzaj", tB4.Text);
-                command.Parameters.AddWithValue("@telefon", tB5.Text);
-                command.Parameters.AddWithValue("@email", tB6.Text);
 
-                command.ExecuteNonQuery();
-                wyslaneInfo("Dodano rekord do tabeli Dziennikarze.");
-                tB1.Text = "";
-                tB2.Text = "";
-                tB3.Text = "";
-                tB4.Text = "";
-                tB5.Text = "";
-                tB6.Text = "";
+                if (email == "" || (email.Contains("@") && email.Contains(".")))
+                {
+                    command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@imie", tB1.Text);
+                    command.Parameters.AddWithValue("@nazwisko", tB2.Text);
+                    command.Parameters.AddWithValue("@redakcja", trimmedID);
+                    command.Parameters.AddWithValue("@rodzaj", tB4.Text);
+                    command.Parameters.AddWithValue("@telefon", tB5.Text);
+                    command.Parameters.AddWithValue("@email", tB6.Text);
+
+                    command.ExecuteNonQuery();
+                    wyslaneInfo("Dodano rekord do tabeli Dziennikarze.");
+                    tB1.Text = "";
+                    tB2.Text = "";
+                    tB3.Text = "";
+                    tB4.Text = "";
+                    tB5.Text = "";
+                    tB6.Text = "";
+                }
+                else
+                {
+                    wyslaneInfo("Email ma nieprawidłowy format.");
+                }
             }
             catch (Exception exc)
             {
