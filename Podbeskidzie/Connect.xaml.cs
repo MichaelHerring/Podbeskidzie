@@ -61,36 +61,55 @@ namespace Podbeskidzie
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
+            
             //builder.DataSource = "DESKTOP-LVKIRTO";
             builder.DataSource = "localhost";
             builder.InitialCatalog = "Podbeskidzie";
             //builder.UserID = tB1.Text;
             //builder.Password = passwordBox.Password;
-            builder.IntegratedSecurity = true;
-            connection.ConnectionString = builder.ConnectionString;
-
-            try
+           
+            if(tB1.Text=="admin" & passwordBox.Password=="bazaTSP")
             {
-                connection.Open();
-            }
-            catch (SqlException exc)
-            {
-                MessageBox.Show(exc.Message);
-                i++;
-                if (i == 3)
+                builder.IntegratedSecurity = true;
+                connection.ConnectionString = builder.ConnectionString;
+                try
                 {
-                    btn1.IsEnabled = false;
+                    connection.Open();
+                }
+                catch (SqlException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                    i++;
+                    if (i == 3)
+                    {
+                        btn1.IsEnabled = false;
+                    }
+                }
+
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    tB1.Clear();
+                    passwordBox.Clear();
+                    MainWindow win = new MainWindow(connection);
+                    win.Show();
+                    this.Close();
                 }
             }
-
-            if (connection.State == System.Data.ConnectionState.Open)
+            else
             {
-                tB1.Clear();
-                passwordBox.Clear();
-                MainWindow win = new MainWindow(connection);
-                win.Show();
-                this.Close();
+                MessageBox.Show("Błedny login lub hasło!!");
+                passwordBox.Password = "";
+                tB1.Text = "";
             }
+         
+
+
+               
+         
+            
+            
+
+           
         }
 
         //ukrywanie hintów
