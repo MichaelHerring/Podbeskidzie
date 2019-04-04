@@ -97,7 +97,7 @@ namespace Podbeskidzie
             }
             else
             {
-                MessageBox.Show("Błedny login lub hasło!!");
+                MessageBox.Show("Błedny login lub hasło!");
                 passwordBox.Password = "";
                 tB1.Text = "";
             }

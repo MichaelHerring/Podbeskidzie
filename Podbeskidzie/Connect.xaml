@@ -51,7 +51,7 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="MainGrid">
-        <MediaElement Name="backgroundVideo" Source="Resources/Oficjalnie.mp4" Stretch="UniformToFill" Margin="-95,-9,0,0">
+        <MediaElement Name="backgroundVideo" Source="Resources/Oficjalnie.mp4" Stretch="UniformToFill" Margin="0,-8,0,-8">
             <!--<Image.Effect>
                 <BlurEffect Radius="10"/>
             </Image.Effect>-->
