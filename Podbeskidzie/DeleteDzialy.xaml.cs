@@ -96,7 +96,7 @@ namespace Podbeskidzie
                     tB2.Text = "";
                     if (i != 0)
                     {
-                        wyslaneInfo($"Usunięto rekord o numerze ID = {id} w tabeli Dzialy.");
+                        wyslaneInfo($"Usunięto rekord o numerze ID = {id} w tabeli Działy.");
                     }
                     else
                     {
@@ -113,6 +113,12 @@ namespace Podbeskidzie
         private void tB0_TextChanged(object sender, TextChangedEventArgs e)
         {
             btn2.IsEnabled = false;
+        }
+
+        private void tB0_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                btn1_Click(this, new RoutedEventArgs());
         }
     }
 }

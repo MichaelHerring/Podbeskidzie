@@ -49,14 +49,16 @@ namespace Podbeskidzie
                 try
                 {
                     command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@ID", tB0.Text);
+                    command.Parameters.AddWithValue("@ID",tB0.Text);
                     reader = command.ExecuteReader();
                     reader.Read();
                     tB1.Text = reader.GetString(1);
                     tB2.Text = reader.GetString(2);
-                    tB3.Text = reader.GetDecimal(3).ToString();
+                    tB3.Text = reader.GetString(3);
                     tB4.Text = reader.GetString(4);
                     tB5.Text = reader.GetString(5);
+                    tB6.Text = reader.GetInt16(6).ToString();
+
                     reader.Close();
                 }
                 catch(Exception exc)
@@ -69,7 +71,9 @@ namespace Podbeskidzie
                     tB3.Text = "";
                     tB4.Text = "";
                     tB5.Text = "";
+                    tB6.Text = "";
                     
+
                 }
                 finally
                 {
@@ -103,6 +107,8 @@ namespace Podbeskidzie
                     tB3.Text = "";
                     tB4.Text = "";
                     tB5.Text = "";
+                    tB6.Text = "";
+                    
 
                     if (i != 0)
                     {
@@ -119,7 +125,13 @@ namespace Podbeskidzie
                 }
             }
         }
-        
+
+        private void tB0_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                btn1_Click(this, new RoutedEventArgs());
+        }
+
         private void tB0_TextChanged(object sender, TextChangedEventArgs e)
         {
             btn2.IsEnabled = false;
