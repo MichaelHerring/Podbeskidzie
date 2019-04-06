@@ -52,9 +52,6 @@
     </Window.Resources>
     <Grid x:Name="MainGrid">
         <MediaElement Name="backgroundVideo" Source="Resources/Oficjalnie.mp4" Stretch="UniformToFill" Margin="0,-8,0,-8">
-            <!--<Image.Effect>
-                <BlurEffect Radius="10"/>
-            </Image.Effect>-->
         </MediaElement>
         <Rectangle Fill="Black" Width="460" Opacity="0.12" RadiusY="4" RadiusX="4" HorizontalAlignment="Center" />
         <Grid Width="224" Height="160" VerticalAlignment="Top" Margin="0 140 0 0">
@@ -126,7 +123,7 @@
         </Grid>
         <Button Name="ZamknijButton" 
                 Click="ZamknijButton_Click" 
-                Background="Transparent" 
+                Background="Red" 
                 Width="35"
                 Height="25"
                 BorderThickness="0" 

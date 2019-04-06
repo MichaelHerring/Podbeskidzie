@@ -61,12 +61,8 @@ namespace Podbeskidzie
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            
-            //builder.DataSource = "DESKTOP-LVKIRTO";
-            builder.DataSource = "localhost";
+            builder.DataSource = @"localhost";
             builder.InitialCatalog = "Podbeskidzie";
-            //builder.UserID = tB1.Text;
-            //builder.Password = passwordBox.Password;
            
             if(tB1.Text=="admin" & passwordBox.Password=="bazaTSP")
             {
@@ -100,16 +96,7 @@ namespace Podbeskidzie
                 MessageBox.Show("Błedny login lub hasło!");
                 passwordBox.Password = "";
                 tB1.Text = "";
-            }
-         
-
-
-               
-         
-            
-            
-
-           
+            }           
         }
 
         //ukrywanie hintów
