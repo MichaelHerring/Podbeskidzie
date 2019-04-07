@@ -110,11 +110,11 @@ namespace Podbeskidzie
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "")
+            if (tB1.Text == "" || tB2.Text == "" || tB6.Text == "")
             {
-                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko, Pesel.");
+                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko");
             }
-            else if (tB4.Text == "" || tB5.Text == "")
+            else if (tB4.Text == "" || tB5.Text == "" || tB3.Text == "")
             {
                 if (MessageBox.Show("Czy na pewno chcesz zostawić puste pola?", "Uwaga", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {

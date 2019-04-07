@@ -89,11 +89,11 @@
         <Label Grid.Column="0" 
                Grid.Row="1"
                FontSize="18"
-               Content="Imię" />
+               Content="Imię " />
         <Label Grid.Column="0" 
                Grid.Row="2"
                FontSize="18"
-               Content="Nazwisko" />
+               Content="Nazwisko " />
         <Label Grid.Column="0" 
                Grid.Row="3"
                FontSize="18"
@@ -105,8 +105,8 @@
         
         
         <Rectangle Fill="White" Grid.Column="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
-        <Rectangle Fill="White" Grid.Column="1" Grid.Row="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
-        <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="#FFF55449" Grid.Column="1" Grid.Row="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="#FFF55449" Grid.Column="1" Grid.Row="2" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="3" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="4" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         
@@ -122,9 +122,11 @@
                  Grid.Column="1"
                  Grid.Row="1"
                  FontSize="18"
+                 Background="#FFF55449"
                  Padding="2"/>
         <TextBox x:Name="tB2" 
                  Grid.Column="1"
+                 Background="#FFF55449"
                  Grid.Row="2"
                  FontSize="18"
                  Padding="2"/>
@@ -164,5 +166,6 @@
                 </StackPanel>
             </Button.ToolTip>
         </Button>
+        <TextBox Background="Transparent" Text="*Pole czerwone- WYPEŁNIJ!" Foreground="White" Grid.Column="0" Grid.Row="6"/>
     </Grid>
 </Page>

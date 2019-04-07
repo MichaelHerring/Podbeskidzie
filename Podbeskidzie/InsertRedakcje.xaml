@@ -104,7 +104,7 @@
                FontSize="18"
                Content="Strona internetowa"/>
         <Rectangle Fill="White" Grid.Column="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
-        <Rectangle Fill="White" Grid.Column="1" Grid.Row="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="#FFF55449" Grid.Column="1" Grid.Row="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="3" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="4" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
@@ -119,6 +119,7 @@
         <TextBox x:Name="tB1" 
                  Grid.Column="1"
                  Grid.Row="1"
+                 Background="#FFF55449"
                  FontSize="18"
                  Padding="2"/>
         <TextBox x:Name="tB2" 
@@ -161,5 +162,6 @@
                 </StackPanel>
             </Button.ToolTip>
         </Button>
+        <TextBox Background="Transparent" Text="*Pole czerwone- WYPEŁNIJ!" Foreground="White" Grid.Column="0" Grid.Row="6"/>
     </Grid>
 </Page>
