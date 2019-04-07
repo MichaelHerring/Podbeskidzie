@@ -62,6 +62,7 @@ namespace Podbeskidzie
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
             builder.DataSource = @"localhost";
+            //builder.DataSource = @"TSP0011\SQLEXPRESS";
             builder.InitialCatalog = "Podbeskidzie";
            
             if(tB1.Text=="admin" & passwordBox.Password=="bazaTSP")
