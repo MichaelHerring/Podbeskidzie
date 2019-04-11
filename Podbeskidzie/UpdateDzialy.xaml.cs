@@ -93,14 +93,15 @@ namespace Podbeskidzie
                 updateCommand.Parameters.AddWithValue("@ID", tB0.Text);
                 updateCommand.Parameters.AddWithValue("@nazwa", tB1.Text);
                 updateCommand.Parameters.AddWithValue("@telefon", tB2.Text);
-                if (tB0.Text != String.Empty)
+
+                if (tB1.Text == "")
                 {
-                    updateCommand.ExecuteNonQuery();
-                    wyslaneInfo($"Zaktualizowano rekord o numerze ID = {tB0.Text} w tabeli Działy.");
+                    wyslaneInfo("Wypełnij wymagane pole: Nazwa.");
                 }
                 else
                 {
-                    wyslaneInfo("Wprowadź ID");
+                    updateCommand.ExecuteNonQuery();
+                    wyslaneInfo($"Zaktualizowano rekord o numerze ID = {tB0.Text} w tabeli Działy.");
                 }
             }
             catch (Exception exc)

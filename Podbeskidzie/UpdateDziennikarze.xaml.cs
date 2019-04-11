@@ -157,14 +157,15 @@ namespace Podbeskidzie
                 updateCommand.Parameters.AddWithValue("@rodzaj", tB4.Text);
                 updateCommand.Parameters.AddWithValue("@telefon", tB5.Text);
                 updateCommand.Parameters.AddWithValue("@email", tB6.Text);
-                if (tB0.Text != String.Empty)
+
+                if (tB1.Text == "" || tB2.Text == "" || tB3.Text == "" || tB4.Text == "")
                 {
-                    updateCommand.ExecuteNonQuery();
-                    wyslaneInfo($"Zaktualizowano rekord o numerze ID = {tB0.Text} w tabeli Dziennikarze.");
+                    wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko, ID Redakcji, Typ.");
                 }
                 else
                 {
-                    wyslaneInfo("Wprowadź ID");
+                    updateCommand.ExecuteNonQuery();
+                    wyslaneInfo($"Zaktualizowano rekord o numerze ID = {tB0.Text} w tabeli Dziennikarze.");
                 }
             }
             catch (Exception exc)

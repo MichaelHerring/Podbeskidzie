@@ -117,11 +117,18 @@
                Grid.Row="6"
                FontSize="18"
                Content="Email" />
+        
+        <Image Source="Resources/exclamation.png" HorizontalAlignment="Right" Width="20" Grid.Column="0" Grid.Row="1" Margin="0 0 4 0"/>
+        <Image Source="Resources/exclamation.png" HorizontalAlignment="Right" Width="20" Grid.Column="0" Grid.Row="2" Margin="0 0 4 0"/>
+        <Image Source="Resources/exclamation.png" HorizontalAlignment="Right" Width="20" Grid.Column="0" Grid.Row="3" Margin="0 0 4 0"/>
+        <Image Source="Resources/exclamation.png" HorizontalAlignment="Right" Width="20" Grid.Column="0" Grid.Row="4" Margin="0 0 4 0"/>
+        <Image Source="Resources/exclamation.png" HorizontalAlignment="Left" Width="20" Grid.Column="0" Grid.Row="8" />
+        
         <Rectangle Fill="White" Grid.Column="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
-        <Rectangle Fill="#FFF55449" Grid.Column="1" Grid.Row="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
-        <Rectangle Fill="#FFF55449" Grid.Column="1" Grid.Row="2" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
-        <Rectangle Fill="Transparent" Grid.Column="1" Grid.Row="3" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
-        <Rectangle Fill="Transparent" Grid.Column="1" Grid.Row="4" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="1" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="2" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="3" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
+        <Rectangle Fill="White" Grid.Column="1" Grid.Row="4" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="5" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <Rectangle Fill="White" Grid.Column="1" Grid.Row="6" RadiusY="4" RadiusX="4" Margin="0 4 0 4"/>
         <TextBox x:Name="tB0"
@@ -134,16 +141,16 @@
                  />
         <TextBox x:Name="tB1" 
                  Grid.Column="1"
-                 Background="#FFF55449"
+                 Background="White"
                  Grid.Row="1"
                  FontSize="18" 
                  Padding="2"/>
         <TextBox x:Name="tB2"
-                 Background="#FFF55449"
+                 Background="White"
                  Grid.Column="1"
                  Grid.Row="2"
                  FontSize="18"
-                 Padding="2"/>
+                 Padding="2" HorizontalAlignment="Left" Margin="8,5,0,5" Width="221"/>
         
         <ComboBox x:Name="tB3"
                  Grid.Column="1"
@@ -197,8 +204,6 @@
                 </StackPanel>
             </Button.ToolTip>
         </Button>
-        <Border CornerRadius="1" BorderBrush="#FFF55449" BorderThickness="5" Margin="0.4,4.4,0.2,4" Grid.Column="1" Grid.Row="3"/>
-        <Border CornerRadius="1" BorderBrush="#FFF55449" BorderThickness="5" Margin="0.4,4.4,0.2,4" Grid.Column="1" Grid.Row="4"/>
-        <TextBox Background="Transparent" Text="*Pole czerwone- WYPEŁNIJ!" Foreground="White" Grid.Column="0" Grid.Row="8"/>
+        <Label Background="Transparent" Content="wymagane" FontSize="14" Foreground="White" Margin="24 0 0 0" Padding="0 8" Grid.Column="0" Grid.Row="8"/>
     </Grid>
 </Page>

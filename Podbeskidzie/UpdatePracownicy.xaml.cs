@@ -119,14 +119,14 @@ namespace Podbeskidzie
                 updatecomm.Parameters.AddWithValue("@stanowisko", tB5.Text);
                 updatecomm.Parameters.AddWithValue("@iddzialu",Convert.ToInt16(tB6.Text));
 
-                if (tB0.Text != String.Empty)
+                if (tB1.Text == "" || tB2.Text == "" || tB6.Text == "")
                 {
-                    updatecomm.ExecuteNonQuery();
-                    wyslaneInfo($"Zaktualizowano rekord o numerze ID = {tB0.Text} w tabeli Pracownicy.");
+                    wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko, ID Działu.");
                 }
                 else
                 {
-                    wyslaneInfo("Wprowadź ID");
+                    updatecomm.ExecuteNonQuery();
+                    wyslaneInfo($"Zaktualizowano rekord o numerze ID = {tB0.Text} w tabeli Pracownicy.");
                 }
             }
 

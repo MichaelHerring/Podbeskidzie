@@ -225,9 +225,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\bulb-black.png" />
     <Resource Include="Resources\bulb.png" />
     <Resource Include="Resources\password.png" />
@@ -235,13 +232,7 @@
     <Resource Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\back3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\2.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Podbeskidzie.png" />
@@ -253,6 +244,7 @@
     <Resource Include="Resources\close.png" />
     <Resource Include="Resources\icon.ico" />
     <Resource Include="icon.ico" />
+    <Resource Include="Resources\exclamation.png" />
     <Content Include="Resources\Oficjalnie.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

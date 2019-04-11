@@ -13,29 +13,6 @@
         Loaded="Window_Loaded"
         MouseDown="Window_MouseDown">
     <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="#0f1f38" />
-            <Setter Property="Foreground" Value="White" />
-            <Style.Triggers>
-                <Trigger Property="Button.IsMouseOver" Value="True">
-                    <Setter Property="FontWeight" Value="Bold" />
-                    <Setter Property="Foreground" Value="#000"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <!--Style TargetType="StackPanel">
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect 
-                        ShadowDepth="4"
-                        Direction="330"
-                        Color="Black"
-                        Opacity="0.5"
-                        BlurRadius="4">
-                    </DropShadowEffect>
-                </Setter.Value>
-            </Setter>
-        </-->
         <Style x:Key="CloseButton" TargetType="{x:Type Button}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -57,6 +34,75 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+        <Style x:Key="MinMaxButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#0d1a30">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF193157"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#0f1f38" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Width" Value="235" />
+        </Style>
+        <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#0f1f38">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF193157" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#0f1f38" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Width" Value="235" />
+        </Style>
+        <Style x:Key="ListButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#0f1f38" BorderThickness=" 0 1 0 0" BorderBrush="Gray">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF193157"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#0f1f38" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Width" Value="235" />
         </Style>
     </Window.Resources>
     <Grid>
@@ -86,7 +132,7 @@
                     </Rectangle>
                 </Grid>
             </Button>
-            <Button Name="MaxBtn" DockPanel.Dock="Right" Width="45" BorderThickness="0" Background="Transparent" Click="MaxBtn_Click">
+            <Button Name="MaxBtn" Style="{DynamicResource MinMaxButtonStyle}" DockPanel.Dock="Right" Width="45" BorderThickness="0" Click="MaxBtn_Click">
                 <Grid Width="12" Height="12">
                     <Rectangle Width="1" Height="12" Fill="White" HorizontalAlignment="Right"></Rectangle>
                     <Rectangle Width="1" Height="12" Fill="White" HorizontalAlignment="Left"></Rectangle>
@@ -94,7 +140,7 @@
                     <Rectangle Width="14" Height="1" Fill="White" VerticalAlignment="Bottom"></Rectangle>
                 </Grid>
             </Button>
-            <Button Name="MiniBtn" Click="MiniBtn_Click" DockPanel.Dock="Right" Width="45" BorderThickness="0" Background="Transparent">
+            <Button Name="MiniBtn" Style="{DynamicResource MinMaxButtonStyle}" Click="MiniBtn_Click" DockPanel.Dock="Right" Width="45" BorderThickness="0">
                 <Grid Height="12">
                     <Rectangle Fill="White" Width="14" Height="1" VerticalAlignment="Bottom"></Rectangle>
                 </Grid>
@@ -116,6 +162,7 @@
                                   ShadowDepth="1"/>
             </DockPanel.Effect>
             <Button x:Name="btn1"
+                    Style="{DynamicResource MenuButtonStyle}"
                     Content="Dodaj"
                     Width="120"
                     Margin="0 0 0 0"
@@ -126,6 +173,7 @@
                     MouseLeave="btn1_MouseLeave"
                     Click="btn1_Click"/>
             <Button x:Name="btn2"
+                    Style="{DynamicResource MenuButtonStyle}"
                     Content="Usuń"
                     Width="120"
                     Margin="0"
@@ -137,6 +185,7 @@
                     Click="btn2_Click"
                      />
             <Button x:Name="btn3"
+                    Style="{DynamicResource MenuButtonStyle}"
                     Content="Aktualizuj"
                     Width="120"
                     Margin="0"
@@ -147,6 +196,7 @@
                     MouseLeave="btn3_MouseLeave"
                     Click="btn3_Click" />
             <Button x:Name="btn4"
+                    Style="{DynamicResource MenuButtonStyle}"
                     Content="Wyświetl"
                     Width="120"
                     Margin="0"
@@ -207,30 +257,45 @@
                 </DropShadowEffect>
             </StackPanel.Effect>
             <Rectangle x:Name="Rectangle1" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
-            <Button x:Name="btnDodaj1" 
+            <Button x:Name="btnDodaj1"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Dziennikarze" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnDodaj1_Click" />
-            <Button x:Name="btnDodaj2" 
+            <Button x:Name="btnDodaj2"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Redakcje" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnDodaj2_Click"/>
-            <Button x:Name="btnDodaj3" 
+            <Button x:Name="btnDodaj3"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Wolontariusze" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnDodaj3_Click"/>
-            <Button x:Name="btnDodaj4" 
+            <Button x:Name="btnDodaj4"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Pracownicy" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnDodaj4_Click"/>
-            <Button x:Name="btnDodaj5" 
+            <Button x:Name="btnDodaj5"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Działy" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0"
                     Click="btnDodaj5_Click"/>
         </StackPanel>
         <StackPanel x:Name="StackPanel2"
@@ -252,30 +317,45 @@
                 </DropShadowEffect>
             </StackPanel.Effect>
             <Rectangle x:Name="Rectangle2" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
-            <Button x:Name="btnUsun1" 
+            <Button x:Name="btnUsun1"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Dziennikarze" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1" 
                     Click="btnUsun1_Click"/>
-            <Button x:Name="btnUsun2" 
+            <Button x:Name="btnUsun2"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Redakcje" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnUsun2_Click"/>
-            <Button x:Name="btnUsun3" 
+            <Button x:Name="btnUsun3"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Wolontariusze" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnUsun3_Click"/>
-            <Button x:Name="btnUsun4" 
+            <Button x:Name="btnUsun4"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Pracownicy" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnUsun4_Click"/>
-            <Button x:Name="btnUsun5" 
+            <Button x:Name="btnUsun5"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Działy" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0"
                     Click="btnUsun5_Click"/>
         </StackPanel>
         <StackPanel x:Name="StackPanel3"
@@ -297,30 +377,45 @@
                 </DropShadowEffect>
             </StackPanel.Effect>
             <Rectangle x:Name="Rectangle3" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
-            <Button x:Name="btnAktualizuj1" 
+            <Button x:Name="btnAktualizuj1"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Dziennikarze" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnAktualizuj1_Click"/>
-            <Button x:Name="btnAktualizuj2" 
+            <Button x:Name="btnAktualizuj2"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Redakcje" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnAktualizuj2_Click"/>
-            <Button x:Name="btnAktualizuj3" 
+            <Button x:Name="btnAktualizuj3"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Wolontariusze" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnAktualizuj3_Click"/>
-            <Button x:Name="btnAktualizuj4" 
+            <Button x:Name="btnAktualizuj4"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Pracownicy" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnAktualizuj4_Click"/>
-            <Button x:Name="btnAktualizuj5" 
+            <Button x:Name="btnAktualizuj5"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Działy" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0"
                     Click="btnAktualizuj5_Click"/>
         </StackPanel>
         <StackPanel x:Name="StackPanel4"
@@ -342,30 +437,45 @@
                 </DropShadowEffect>
             </StackPanel.Effect>
             <Rectangle x:Name="Rectangle4" Height="4" Fill="#f55449" Width="104" RadiusY="2" RadiusX="2"/>
-            <Button x:Name="btnWyswietl1" 
+            <Button x:Name="btnWyswietl1"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Dziennikarze" 
-                    Height="30"
-                    BorderThickness="0 0 0 1" 
+                    Width="120"
+                    Height="30" 
                     Click="btnWyswietl1_Click"/>
-            <Button x:Name="btnWyswietl2" 
+            <Button x:Name="btnWyswietl2"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Redakcje" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnWyswietl2_Click"/>
-            <Button x:Name="btnWyswietl3" 
+            <Button x:Name="btnWyswietl3"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Wolontariusze" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnWyswietl3_Click"/>
-            <Button x:Name="btnWyswietl4" 
+            <Button x:Name="btnWyswietl4"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Pracownicy" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0 0 0 1"
                     Click="btnWyswietl4_Click"/>
-            <Button x:Name="btnWyswietl5" 
+            <Button x:Name="btnWyswietl5"
+                    Style="{DynamicResource ListButtonStyle}"
+                    FontSize="12"
+                    FontWeight="Normal"
                     Content="Działy" 
+                    Width="120"
                     Height="30"
-                    BorderThickness="0"
                     Click="btnWyswietl5_Click"/>
         </StackPanel>
 

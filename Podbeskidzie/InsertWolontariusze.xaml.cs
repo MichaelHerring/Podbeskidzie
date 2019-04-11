@@ -70,7 +70,7 @@ namespace Podbeskidzie
         {
             if (tB1.Text == "" || tB2.Text == "")
             {
-                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko");
+                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko.");
             }
             else if (tB3.Text == "" || tB4.Text== "")
             {

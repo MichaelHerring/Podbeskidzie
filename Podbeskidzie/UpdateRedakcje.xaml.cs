@@ -103,14 +103,14 @@ namespace Podbeskidzie
                 updateCommand.Parameters.AddWithValue("@telefon", tB2.Text);
                 updateCommand.Parameters.AddWithValue("@email", tB3.Text);
                 updateCommand.Parameters.AddWithValue("@strona", tB4.Text);
-                if (tB0.Text != String.Empty)
+                if (tB1.Text == "")
                 {
-                    updateCommand.ExecuteNonQuery();
-                    wyslaneInfo($"Zaktualizowano rekord o numerze ID = {tB0.Text} w tabeli Redakcje.");
+                    wyslaneInfo("Wypełnij wymagane pola: Nazwa.");
                 }
                 else
                 {
-                    wyslaneInfo("Wprowadź ID");
+                    updateCommand.ExecuteNonQuery();
+                    wyslaneInfo($"Zaktualizowano rekord o numerze ID = {tB0.Text} w tabeli Redakcje.");
                 }
             }
             catch (Exception exc)

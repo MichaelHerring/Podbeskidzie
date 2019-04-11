@@ -112,7 +112,7 @@ namespace Podbeskidzie
         {
             if (tB1.Text == "" || tB2.Text == "" || tB6.Text == "")
             {
-                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko");
+                wyslaneInfo("Wypełnij wymagane pola: Imię, Nazwisko, ID Działu.");
             }
             else if (tB4.Text == "" || tB5.Text == "" || tB3.Text == "")
             {
