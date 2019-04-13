@@ -92,7 +92,6 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Column="0" 
-               FontWeight="Bold"
                Grid.Row="0"
                FontSize="18"
                Content="ID Pracownika" />
